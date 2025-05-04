@@ -370,7 +370,7 @@
           <div class="container-fluid">
             <!--begin::Row-->
             <div class="row">
-              <div class="col-sm-6"><h3 class="mb-0">Produtos / Serviços</h3></div>
+              <div class="col-sm-6"><h3 class="mb-0">Solicitações</h3></div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
                   <li class="breadcrumb-item"><a href="#">Inicio</a></li>
@@ -387,239 +387,141 @@
           <div class="container-fluid">
             <!-- Info boxes -->
             <div class="row">
-                <!-- Card Produto -->
-                <div class="col-12 col-sm-6 col-md-6">
-                  <div class="info-box">
-                    <span class="info-box-icon text-bg-success shadow-sm">
-                      <i class="bi bi-box-seam"></i>
+              <!-- Igrejas Ativas -->
+            
+              <!-- Categorias -->
+              <div class="col-12 col-sm-6 col-md-6">
+                <div class="info-box">
+                  <span class="info-box-icon text-bg-primary shadow-sm">
+                    <i class="bi bi-tags-fill"></i>
+                  </span>
+                  <div class="info-box-content">
+                    <span class="info-box-text d-flex justify-content-between align-items-center">
+                     Publicidades
                     </span>
-                    <div class="info-box-content">
-                      <span class="info-box-text d-flex justify-content-between align-items-center">
-                        Produto
-                        <button class="btn btn-sm btn-outline-success ms-auto" data-bs-toggle="modal" data-bs-target="#modalProduto">Novo</button>
-                      </span>
-                      <span class="info-box-number">10</span>
-                    </div>
-                  </div>
-                </div>
-              
-                <!-- Card Serviço -->
-                <div class="col-12 col-sm-6 col-md-6">
-                  <div class="info-box">
-                    <span class="info-box-icon text-bg-warning shadow-sm">
-                      <i class="bi bi-tools"></i>
-                    </span>
-                    <div class="info-box-content">
-                      <span class="info-box-text d-flex justify-content-between align-items-center">
-                        Serviço
-                        <button class="btn btn-sm btn-outline-warning ms-auto" data-bs-toggle="modal" data-bs-target="#modalServico">Novo</button>
-                      </span>
-                      <span class="info-box-number">8</span>
-                    </div>
+                    <span class="info-box-number">5</span>
                   </div>
                 </div>
               </div>
-
-
-              <div class="container my-4">
-                <!-- Título Produtos -->
-                <div class="row mb-2">
-                  <div class="col-12">
-                    <h5 class="mb-0">Produtos</h5>
-                  </div>
+            </div>
+            
+            <!-- /.row -->
+            <!--begin::Row-->
+           
+           <!----tabela--->
+           <div class="row mt-4">
+            <div class="col-12">
+              <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                  <h3 class="card-title mb-0">Solicitações</h3>
+                  <span class="badge bg-light text-dark rounded-pill">2 registros</span>
                 </div>
-              
-                <div class="row">
-                  <!-- Card Produto -->
-                  <div class="col-md-3">
-                    <div class="card collapsed-card shadow-sm">
-                      <div class="card-header">
-                        <h3 class="card-title">Produto 1</h3>
-                        <div class="card-tools">
-                          <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                            <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                            <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                          </button>
-                        </div>
+                <div class="card-body">
+                  <div class="row mb-3">
+                    <div class="col-auto">
+                      <div class="btn-group" role="group" aria-label="Exportar dados">
+                        <button class="btn btn-light" title="Exportar para CSV">
+                          <i class="bi bi-filetype-csv text-primary"></i>
+                        </button>
+                        <button class="btn btn-light" title="Exportar para Excel">
+                          <i class="bi bi-file-earmark-excel text-success"></i>
+                        </button>
+                        <button class="btn btn-light" title="Exportar para PDF">
+                          <i class="bi bi-file-earmark-pdf text-danger"></i>
+                        </button>
+                        <button class="btn btn-light" title="Imprimir">
+                          <i class="bi bi-printer text-dark"></i>
+                        </button>
                       </div>
-                      <div class="card-body">
-                        <p class="mb-1">Descrição curta do produto 1.</p>
-                        <p class="mb-2"><span class="badge bg-info">Kz 5.000</span></p>
-                        <div class="d-flex gap-2">
-                          <button class="btn btn-sm btn-info" title="Ver"><i class="bi bi-eye"></i></button>
-                          <button class="btn btn-sm btn-warning" title="Editar"><i class="bi bi-pencil"></i></button>
-                          <button class="btn btn-sm btn-danger" title="Apagar"><i class="bi bi-trash"></i></button>
-                        </div>
+                    </div>
+                    <div class="col-md-4 ms-auto">
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control" placeholder="Pesquisar...">
                       </div>
                     </div>
                   </div>
-              
-                  <!-- Copiar e colar + editar os dados para mais produtos -->
-                  <div class="col-md-3">
-                    <div class="card collapsed-card shadow-sm">
-                      <div class="card-header">
-                        <h3 class="card-title">Produto 2</h3>
-                        <div class="card-tools">
-                          <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                            <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                            <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="card-body">
-                        <p class="mb-1">Descrição curta do produto 2.</p>
-                        <p class="mb-2"><span class="badge bg-info">Kz 3.000</span></p>
-                        <div class="d-flex gap-2">
-                          <button class="btn btn-sm btn-info"><i class="bi bi-eye"></i></button>
-                          <button class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></button>
-                          <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
-                        </div>
-                      </div>
+          
+                  <div class="table-responsive">
+                    <table class="table table-striped table-hover align-middle">
+                      <thead class="table-light">
+                        <tr>
+                          <th class="sortable">Nome igreja <i class="bi bi-arrow-up-down text-muted"></i></th>
+                          <th class="sortable">Usuário <i class="bi bi-arrow-up-down text-muted"></i></th>
+                          <th class="sortable">Email <i class="bi bi-arrow-up-down text-muted"></i></th>
+                          <th class="sortable">Categoria <i class="bi bi-arrow-up-down text-muted"></i></th>
+                            <th class="sortable">Data <i class="bi bi-arrow-up-down text-muted"></i></th>
+                          <th class="text-center">Ação</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Catolica</td>
+                          <td>Adão Magalhães</td>
+                          <td>adaomgalhaes793@gmail.com</td>
+                          <td>Gestão de Marketing</td>
+                          <td>2025-06-15 19:10:13</td>
+                          <td class="text-center">
+                            <div class="btn-group btn-group-sm" role="group">
+                                <button class="btn btn-outline-danger" title="Apagar">
+                                    <i class="bi bi-trash"></i>
+                                  </button>
+                                  
+                              <button class="btn btn-outline-success" title="Aprovar">
+                                <i class="bi bi-check-circle"></i>
+                              </button>
+                              
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                            <td>Bom Deus</td>
+                            <td>Manuela Miguel</td>
+                            <td>manuela@gmail.com</td>
+                            <td>Comunicação</td>
+                            <td>2025-07-04 11:12:16</td>
+                            <td class="text-center">
+                              <div class="btn-group btn-group-sm" role="group">
+                                <button class="btn btn-outline-danger" title="Apagar">
+                                    <i class="bi bi-trash"></i>
+                                  </button>
+                                  
+                                <button class="btn btn-outline-success" title="Aprovar">
+                                    <i class="bi bi-check-circle"></i>
+                                  </button>
+                                  
+                              </div>
+                            </td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+          
+                  <div class="row mt-3">
+                    <div class="col-md-6">
+                      <p class="text-muted small">Mostrando 1-2 de 2 registros</p>
+                    </div>
+                    <div class="col-md-6">
+                      <nav aria-label="Navegação de página">
+                        <ul class="pagination pagination-sm justify-content-end">
+                          <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                          </li>
+                          <li class="page-item active" aria-current="page">
+                            <a class="page-link" href="#">1</a>
+                          </li>
+                          <li class="page-item disabled">
+                            <a class="page-link" href="#">Próximo</a>
+                          </li>
+                        </ul>
+                      </nav>
                     </div>
                   </div>
-              
-                  <!-- Produto 3 -->
-                  <div class="col-md-3">
-                    <div class="card collapsed-card shadow-sm">
-                      <div class="card-header">
-                        <h3 class="card-title">Produto 3</h3>
-                        <div class="card-tools">
-                          <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                            <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                            <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="card-body">
-                        <p class="mb-1">Descrição do produto 3.</p>
-                        <p class="mb-2"><span class="badge bg-info">Kz 7.500</span></p>
-                        <div class="d-flex gap-2">
-                          <button class="btn btn-sm btn-info"><i class="bi bi-eye"></i></button>
-                          <button class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></button>
-                          <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-              
-                  <!-- Produto 4 -->
-                  <div class="col-md-3">
-                    <div class="card collapsed-card shadow-sm">
-                      <div class="card-header">
-                        <h3 class="card-title">Produto 4</h3>
-                        <div class="card-tools">
-                          <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                            <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                            <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                          </button>
-                        </div>
-                      </div>
-                      <div class="card-body">
-                        <p class="mb-1">Produto 4 com breve info.</p>
-                        <p class="mb-2"><span class="badge bg-info">Kz 9.000</span></p>
-                        <div class="d-flex gap-2">
-                          <button class="btn btn-sm btn-info"><i class="bi bi-eye"></i></button>
-                          <button class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></button>
-                          <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+          
                 </div>
-              
-                <!-- Separador -->
-                <hr class="my-4">
-              
-                <!-- Título Serviços -->
-                <div class="row mb-2">
-                  <div class="col-12">
-                    <h5 class="mb-0">Serviços</h5>
-                  </div>
-                </div>
-              
-                <div class="row">
-                    <!-- Serviço 1 -->
-                    <div class="col-md-3">
-                      <div class="card collapsed-card shadow-sm">
-                        <div class="card-header">
-                          <h3 class="card-title">Serviço 1</h3>
-                          <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                              <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                              <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                            </button>
-                          </div>
-                        </div>
-                        <div class="card-body">
-                          <p class="mb-1">Manutenção de equipamento audiovisual.</p>
-                          <p class="mb-2"><span class="badge bg-info">Kz 12.000</span></p>
-                          <div class="d-flex gap-2">
-                            <button class="btn btn-sm btn-info"><i class="bi bi-eye" title="Ver"></i></button>
-                            <button class="btn btn-sm btn-warning"><i class="bi bi-pencil" title="Editar"></i></button>
-                            <button class="btn btn-sm btn-danger"><i class="bi bi-trash" title="Apagar"></i></button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  
-                    <!-- Serviço 2 -->
-                    <div class="col-md-3">
-                      <div class="card collapsed-card shadow-sm">
-                        <div class="card-header">
-                          <h3 class="card-title">Serviço 2</h3>
-                          <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                              <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                              <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                            </button>
-                          </div>
-                        </div>
-                        <div class="card-body">
-                          <p class="mb-1">Design gráfico para eventos corporativos.</p>
-                          <p class="mb-2"><span class="badge bg-info">Kz 8.500</span></p>
-                          <div class="d-flex gap-2">
-                            <button class="btn btn-sm btn-info"><i class="bi bi-eye" title="Ver"></i></button>
-                            <button class="btn btn-sm btn-warning"><i class="bi bi-pencil" title="Editar"></i></button>
-                            <button class="btn btn-sm btn-danger"><i class="bi bi-trash" title="Apagar"></i></button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  
-                    <!-- Serviço 3 -->
-                    <div class="col-md-3">
-                      <div class="card collapsed-card shadow-sm">
-                        <div class="card-header">
-                          <h3 class="card-title">Serviço 3</h3>
-                          <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-lte-toggle="card-collapse">
-                              <i data-lte-icon="expand" class="bi bi-plus-lg"></i>
-                              <i data-lte-icon="collapse" class="bi bi-dash-lg"></i>
-                            </button>
-                          </div>
-                        </div>
-                        <div class="card-body">
-                          <p class="mb-1">Consultoria em marketing digital.</p>
-                          <p class="mb-2"><span class="badge bg-info">Kz 15.000</span></p>
-                          <div class="d-flex gap-2">
-                            <button class="btn btn-sm btn-info"><i class="bi bi-eye" title="Ver"></i></button>
-                            <button class="btn btn-sm btn-warning"><i class="bi bi-pencil" title="Editar"></i></button>
-                            <button class="btn btn-sm btn-danger"><i class="bi bi-trash" title="Apagar"></i></button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
               </div>
-              
-              
-            
-            
-              
-              
-         
-      
+            </div>
+          </div>
           
           
           <style>
