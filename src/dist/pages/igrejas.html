@@ -441,7 +441,10 @@
                   <div class="info-box-content">
                     <span class="info-box-text">Criar Igrejas</span>
                     <span class="info-box-number">
-                      <button class="btn btn-sm btn-outline-info px-3 mt-1">Nova</button>
+                      <button class="btn btn-sm btn-outline-info px-3 mt-1" data-bs-toggle="modal" data-bs-target="#modalIgreja">
+  Nova
+</button>
+
                     </span>
                   </div>
                   <!-- /.info-box-content -->
@@ -577,11 +580,123 @@
               font-weight: 500;
             }
           </style>
+
+
            
             <!--end::Row-->
           </div>
           <!--end::Container-->
         </div>
+
+        <!---modal igreja-->
+
+        <div class="modal fade" id="modalIgreja" tabindex="-1" aria-labelledby="modalIgrejaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+
+      <div class="modal-header bg-info text-white">
+        <h5 class="modal-title" id="modalIgrejaLabel">Cadastrar Igreja</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+
+      <div class="modal-body">
+        <form>
+          <!-- Nome, NIF, Diário da República -->
+          <div class="row mb-3">
+            <div class="col-md-4">
+              <label class="form-label">Nome</label>
+              <input type="text" class="form-control" placeholder="Nome da Igreja">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">NIF</label>
+              <input type="text" class="form-control" placeholder="Número de identificação fiscal">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Diário da República</label>
+              <input type="file" class="form-control">
+            </div>
+          </div>
+
+          <!-- Sigla, Contato, Localização -->
+          <div class="row mb-3">
+            <div class="col-md-4">
+              <label class="form-label">Sigla</label>
+              <input type="text" class="form-control" placeholder="Sigla da Igreja">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Contato</label>
+              <input type="text" class="form-control" placeholder="Telefone ou email">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Localização</label>
+              <input type="text" class="form-control" placeholder="Endereço">
+            </div>
+          </div>
+
+          <!-- Tempo de Ativação, Categoria, Aliança -->
+          <div class="row mb-3">
+            <div class="col-md-4">
+              <label class="form-label">Tempo de Ativação</label>
+              <select class="form-select">
+                <option selected disabled>Escolher tempo...</option>
+                <option value="1">1 ano</option>
+                <option value="2">2 anos</option>
+                <option value="3">3 anos</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Categoria</label>
+              <select class="form-select">
+                <option selected disabled>Escolher categoria...</option>
+                <option value="ministerial">Ministerial</option>
+                <option value="comunitária">Comunitária</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Aliança</label>
+              <select class="form-select">
+                <option selected disabled>Escolher aliança...</option>
+                <option value="a1">Aliança 1</option>
+                <option value="a2">Aliança 2</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Foto, Logo -->
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label class="form-label">Foto</label>
+              <input type="file" class="form-control">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Logo</label>
+              <input type="file" class="form-control">
+            </div>
+          </div>
+
+          <!-- Sobre, Descrição -->
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label class="form-label">Sobre</label>
+              <textarea class="form-control" rows="4" placeholder="Informações sobre a igreja..."></textarea>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Descrição</label>
+              <textarea class="form-control" rows="4" placeholder="Descrição detalhada..."></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-info">Cadastrar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
         <!--end::App Content-->
       </main>
       <!--end::App Main-->
