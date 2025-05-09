@@ -410,7 +410,9 @@
                     <div class="info-box-content">
                       <span class="info-box-text d-flex justify-content-between align-items-center">
                         Departamentos
-                        <button class="btn btn-sm btn-outline-primary ms-auto" data-bs-toggle="modal" data-bs-target="#modalAlianca">Novo</button>
+                          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalDepartamento">
+                            Novo
+                          </button>
                       </span>
                       <span class="info-box-number">5</span>
                     </div>
@@ -528,20 +530,56 @@
               </div>
             </div>
           </div>
+
+          
+            <!-- Modal para adicionar novo departamento -->
+
+            <div class="modal fade" id="modalDepartamento" tabindex="-1" aria-labelledby="modalDepartamentoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title" id="modalDepartamentoLabel">Cadastrar Novo Departamento</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="departamento" class="form-label">Departamento</label>
+              <input type="text" class="form-control" id="departamento" placeholder="Ex: Comunicação" required>
+            </div>
+            <div class="col-md-6">
+              <label for="cargo" class="form-label">Cargo</label>
+              <input type="text" class="form-control" id="cargo" placeholder="Ex: Marketing" required>
+            </div>
+            <div class="col-md-6">
+              <label for="igreja" class="form-label">Igreja pertencente</label>
+              <select class="form-select" id="igreja" required>
+                <option selected disabled>Selecione uma igreja</option>
+                <option value="catolica">Católica</option>
+                <option value="pentecostal">Pentecostal</option>
+                <option value="adventista">Adventista</option>
+                <option value="metodista">Metodista</option>
+                <!-- Adicione mais conforme necessário -->
+              </select>
+            </div>
+           
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+          
+
           
           
-          <style>
-            .sortable {
-              cursor: pointer;
-            }
-            .sortable i {
-              font-size: 0.75rem;
-              margin-left: 0.25rem;
-            }
-            .badge {
-              font-weight: 500;
-            }
-          </style>
+         
            
             <!--end::Row-->
           </div>
