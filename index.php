@@ -1,7 +1,7 @@
 
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Omnigrejas |Login</title>
+    <title>Omnigrejas |Painel de Controle</title>
     <!--begin::Primary Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="title" content="AdminLTE 4 | Página de Login" />
@@ -14,16 +14,14 @@
       name="keywords"
       content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, colorlibhq, colorlibhq dashboard, colorlibhq admin dashboard"
     />
-    <!--end::Primary Meta Tags-->
-    <!--begin::Fonts-->
+   
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fontsource/source-sans-3@5.0.12/index.css"
       integrity="sha256-tXJfXfp6Ewt1ilPzLDtQnJV4hclT9XuaZUKyUvmyr+Q="
       crossorigin="anonymous"
     />
-    <!--end::Fonts-->
-    <!--begin::Third Party Plugin(OverlayScrollbars)-->
+   
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/styles/overlayscrollbars.min.css"
@@ -37,12 +35,11 @@
       integrity="sha256-9kPW/n5nn53j4WMRYAxe9c1rCY96Oogo/MKSVdKzPmI="
       crossorigin="anonymous"
     />
-    <!--end::Third Party Plugin(Bootstrap Icons)-->
-    <!--begin::Required Plugin(AdminLTE)-->
+
         <link rel="stylesheet" href="../DashOmnigrejas/src/dist/css/adminlte.css" />
 
     
-    <!--end::Required Plugin(AdminLTE)-->
+
   </head>
   <!--end::Head-->
   <!--begin::Body-->
@@ -50,7 +47,7 @@
     <div class="login-box">
       <div class="login-logo">
         <img src="../DashOmnigrejas/src/dist/assets/img/logo.png" width="100" height="100" alt=""> <br>
-        <a href="../index2.html">Omnigrejas | Login</a>
+        <a href="../DashOmnigrejas/src/dist/pages/main.php">Omnigrejas | Login</a>
       </div>
       <!-- /.login-logo -->
       <div class="card">
@@ -87,7 +84,7 @@
           <!-- /.social-auth-links -->
           <p class="mb-1"><a href="forgot-password.html">Esqueci minha senha</a></p>
           <p class="mb-0">
-            <a href="register.html" class="text-center"> Registrar uma nova conta </a>
+            <a href="register.php" class="text-center"> Registrar uma nova conta </a>
           </p>
         </div>
         <!-- /.login-card-body -->
