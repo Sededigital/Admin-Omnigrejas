@@ -1,3 +1,5 @@
+<?php include 'route.php'; ?>
+
 
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -127,15 +129,13 @@
                     <small>Membro desde 2024</small>
                   </p>
                 </li>
-                <!--end::User Image-->
-                <!--begin::Menu Body-->
+                
                 <li class="user-body">
                   <!--begin::Row-->
                 
                   <!--end::Row-->
                 </li>
-                <!--end::Menu Body-->
-                <!--begin::Menu Footer-->
+               
                 <li class="user-footer">
                   <a href="#" class="btn btn-default btn-flat">Perfil</a>
                   <a href="#" class="btn btn-default btn-flat float-end">Sair</a>
@@ -149,259 +149,26 @@
         </div>
         <!--end::Container-->
       </nav>
-      <!--end::Header-->
-      <!--begin::Sidebar-->
-      <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
-        <!--begin::Sidebar Brand-->
-        <div class="sidebar-brand">
-          <!--begin::Brand Link-->
-          <a href="./index.html" class="brand-link">
-            <!--begin::Brand Image-->
-            <img
-              src="../../dist/assets/img/AdminLTELogo.png"
-              alt="AdminLTE Logo"
-              class="brand-image opacity-75 shadow"
-            />
-            <!--end::Brand Image-->
-            <!--begin::Brand Text-->
-            <span class="brand-text fw-light">Omnigrejas</span>
-            <!--end::Brand Text-->
-          </a>
-          <!--end::Brand Link-->
-        </div>
-        <!--end::Sidebar Brand-->
-        <!--begin::Sidebar Wrapper-->
-        <div class="sidebar-wrapper">
-          <nav class="mt-2">
-            <!--begin::Sidebar Menu-->
-            <ul
-              class="nav sidebar-menu flex-column"
-              data-lte-toggle="treeview"
-              role="menu"
-              data-accordion="false"
-            >
-              <!-- Dashboard -->
-              <li class="nav-item menu-open">
-                <a href="#" class="nav-link active">
-                  <i class="nav-icon bi bi-speedometer"></i>
-                  <p>
-                     Painel de Controle
-                  
-                  </p>
-                </a>
-              </li>
-      
-              <!-- Igrejas Dropdown -->
-              <li class="nav-item">
-                <a  class="nav-link">
-                  <i class="nav-icon bi bi-house-door-fill"></i>
-                  <p>
-                    igrejas
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="igrejas.html" class="nav-link">
-                      <i class="nav-icon bi bi-building"></i>
-                      <p>Igrejas</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="menu-preco.html" class="nav-link">
-                      <i class="nav-icon bi bi-tag-fill"></i>
-                      <p>Menu de Preço</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="departamentos.html" class="nav-link">
-                      <i class="nav-icon bi bi-diagram-3-fill"></i>
-                      <p>Departamento</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="institucional.html" class="nav-link">
-                      <i class="nav-icon bi bi-info-circle-fill"></i>
-                      <p>Institucional</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-      
-              <!-- Gestão de Membros Dropdown -->
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="nav-icon bi bi-people-fill"></i>
-                  <p>
-                    Gestão de Membros
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon bi bi-person-plus-fill"></i>
-                      <p>Criar</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon bi bi-credit-card-fill"></i>
-                      <p>Cartão</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-      
-              <!-- Link normal sem dropdown -->
-             
-      
-              <!-- Agendamentos -->
-              <li class="nav-item">
-                <a href="agendamentos.html" class="nav-link">
-                  <i class="nav-icon bi bi-calendar-check-fill"></i>
-                  <p>Agendamentos</p>
-                </a>
-              </li>
-      
-              <!-- Categorias -->
-              <li class="nav-item">
-                <a href="categorias.html" class="nav-link">
-                  <i class="nav-icon bi bi-collection-fill"></i>
-                  <p>Categorias</p>
-                </a>
-              </li>
-      
-              <!-- Alianças -->
-              <li class="nav-item">
-                <a href="aliancas.html" class="nav-link">
-                  <i class="nav-icon bi bi-shake"></i>
-                  <p>Alianças</p>
-                </a>
-              </li>
-      
-              <!-- Gestão Users -->
-              <li class="nav-item">
-                <a href="gestao-usuarios.html" class="nav-link">
-                  <i class="nav-icon bi bi-person-gear"></i>
-                  <p>Gestão Users</p>
-                </a>
-              </li>
-      
-              <!-- Gestão Valores -->
-              <li class="nav-item">
-                <a href="gestao-valores.html" class="nav-link">
-                  <i class="nav-icon bi bi-cash-stack"></i>
-                  <p>Gestão Valores</p>
-                </a>
-              </li>
-      
-              <!-- Obreiros -->
-              <li class="nav-item">
-                <a href="obreiros.html" class="nav-link">
-                  <i class="nav-icon bi bi-person-badge-fill"></i>
-                  <p>Obreiros</p>
-                </a>
-              </li>
-      
-              <!-- Operações Dropdown -->
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon bi bi-gear-fill"></i>
-                  <p>
-                    Operações
-                    <i class="nav-arrow bi bi-chevron-right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="servico-produto.html" class="nav-link">
-                      <i class="nav-icon bi bi-basket-fill"></i>
-                      <p>Serviços/Produtos</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="ativar-publicidade.html" class="nav-link">
-                      <i class="nav-icon bi bi-megaphone-fill"></i>
-                      <p>Ativar Publicidades</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-      
-              <!-- Public/Eventos/Normais -->
-              <li class="nav-item">
-                <a href="publicacaoes.html" class="nav-link">
-                  <i class="nav-icon bi bi-newspaper"></i>
-                  <p>Public/Eventos/Normais</p>
-                </a>
-              </li>
-      
-              <!-- Configuração-Omini -->
-              <li class="nav-item">
-                <a href="configuracoes.html" class="nav-link">
-                  <i class="nav-icon bi bi-sliders"></i>
-                  <p>Configuração-Omini</p>
-                </a>
-              </li>
-      
-              <!-- Solicitações/Compras -->
-              <li class="nav-item">
-                <a href="gestao-compras.html" class="nav-link">
-                  <i class="nav-icon bi bi-cart-check-fill"></i>
-                  <p>Solicitações/Compras</p>
-                </a>
-              </li>
-            </ul>
-            <!--end::Sidebar Menu-->
-          </nav>
-        </div>
-        <!--end::Sidebar Wrapper-->
-      </aside>
-      <!--end::Sidebar-->
-      <!--begin::App Main-->
+     
+      <!---sidebar---->
+
+      <?php include 'sidebar.php'; ?>
+
       <main class="app-main">
         <!--begin::App Content Header-->
         <div class="app-content-header">
-          <!--begin::Container-->
-          <div class="container-fluid">
-            <!--begin::Row-->
-            <div class="row">
-              <div class="col-sm-6"><h3 class="mb-0">Painel de Controle</h3></div>
-              <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-end">
-                  <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Contacto</li>
-                </ol>
-              </div>
-            </div>
-            <!--end::Row-->
-          </div>
-          <!--end::Container-->
+        
+     
         </div>
 <!---incluindo o home->
 
-     <?php include 'home.php'; ?>
+     <?php include $pagina_atual; ?>
       </main>
-      <!--end::App Main-->
       <!--begin::Footer-->
-      <footer class="app-footer">
-        <!--begin::To the end-->
-        <div class="float-end d-none d-sm-inline">Movemos-te para o futuro</div>
-        <!--end::To the end-->
-        <!--begin::Copyright-->
-        <strong>
-          Omnigrejas &copy;2025&nbsp;
-          <a href="https://adminlte.io" class="text-decoration-none">sededigital</a>.
-        </strong>
-        Todos os direitos reservados
-        <!--end::Copyright-->
-      </footer>
-      <!--end::Footer-->
+      <?php include 'footer.php'; ?>
+      
     </div>
-    <!--end::App Wrapper-->
-    <!--begin::Script-->
-    <!--begin::Third Party Plugin(OverlayScrollbars)-->
+  
     <script
       src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/browser/overlayscrollbars.browser.es6.min.js"
       integrity="sha256-dghWARbRe2eLlIJ56wNB+b760ywulqK3DzZYEpsg2fQ="
@@ -451,18 +218,7 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      // NOTICE!! DO NOT USE ANY OF THIS JAVASCRIPT
-      // IT'S ALL JUST JUNK FOR DEMO
-      // ++++++++++++++++++++++++++++++++++++++++++
-
-      /* apexcharts
-       * -------
-       * Here we will create a few charts using apexcharts
-       */
-
-      //-----------------------
-      // - MONTHLY SALES CHART -
-      //-----------------------
+    
 
       const sales_chart_options = {
         series: [
@@ -576,9 +332,7 @@
       createSparklineChart('#table-sparkline-6', table_sparkline_6_data);
       createSparklineChart('#table-sparkline-7', table_sparkline_7_data);
 
-      //-------------
-      // - PIE CHART -
-      //-------------
+  
 
       const pie_chart_options = {
         series: [700, 500, 400, 600, 300, 100],
@@ -595,11 +349,9 @@
       const pie_chart = new ApexCharts(document.querySelector('#pie-chart'), pie_chart_options);
       pie_chart.render();
 
-      //-----------------
-      // - END PIE CHART -
-      //-----------------
+  
     </script>
-    <!--end::Script-->
+  
   </body>
-  <!--end::Body-->
+ 
 </html>
