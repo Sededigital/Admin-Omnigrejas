@@ -82,7 +82,7 @@
       
               <!-- Gestão de Membros Dropdown -->
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a  class="nav-link">
                   <i class="nav-icon bi bi-people-fill"></i>
                   <p>
                     Gestão de Membros
