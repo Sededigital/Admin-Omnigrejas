@@ -45,7 +45,10 @@
                   <div class="info-box-content">
                     <span class="info-box-text d-flex justify-content-between align-items-center">
                       Categorias
-                      <button class="btn btn-sm btn-outline-primary ms-auto" data-bs-toggle="modal" data-bs-target="#modalCategoria">Nova</button>
+                      <button class="btn btn-sm btn-outline-primary ms-auto" data-bs-toggle="modal" data-bs-target="#modalCategoria">
+                          Novo
+                        </button>
+
                     </span>
                     <span class="info-box-number">5</span>
                   </div>
@@ -178,4 +181,36 @@
         </div>
         <!--end::App Content-->
       </main>
+
+
+      <div class="modal fade" id="modalCategoria" tabindex="-1" aria-labelledby="modalCategoriaLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalCategoriaLabel">Nova Categoria</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+
+      <div class="modal-body">
+        <form id="formCategoria">
+
+          <!-- Campo Categoria -->
+          <div class="mb-3">
+            <label for="nomeCategoria" class="form-label">Categoria</label>
+            <input type="text" class="form-control" id="nomeCategoria" placeholder="Digite a categoria">
+          </div>
+
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
      

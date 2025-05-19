@@ -45,7 +45,10 @@
                     <div class="info-box-content">
                       <span class="info-box-text d-flex justify-content-between align-items-center">
                         Criar Aliança
-                        <button class="btn btn-sm btn-outline-primary ms-auto" data-bs-toggle="modal" data-bs-target="#modalAlianca">Nova</button>
+                        <button class="btn btn-sm btn-outline-primary ms-auto" data-bs-toggle="modal" data-bs-target="#modalAlianca">
+                            Nova
+                          </button>
+
                       </span>
                       <span class="info-box-number">5</span>
                     </div>
@@ -179,5 +182,37 @@
         </div>
         <!--end::App Content-->
       </main>
+
+
+      <div class="modal fade" id="modalAlianca" tabindex="-1" aria-labelledby="modalAliancaLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalAliancaLabel">Nova Aliança</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+
+      <div class="modal-body">
+        <form id="formAlianca">
+
+          <!-- Campo Aliança -->
+          <div class="mb-3">
+            <label for="nomeAlianca" class="form-label">Aliança</label>
+            <input type="text" class="form-control" id="nomeAlianca" placeholder="Digite o nome da aliança">
+          </div>
+
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
     
    
