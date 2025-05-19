@@ -112,12 +112,11 @@
                 <i data-lte-icon="minimize" class="bi bi-fullscreen-exit" style="display: none"></i>
               </a>
             </li>
-            <!--end::Fullscreen Toggle-->
-            <!--begin::User Menu Dropdown-->
+
             <li class="nav-item dropdown user-menu">
               <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                 <img
-                  src="../../dist/assets/img/user2-160x160.jpg"
+                  src="../../src/assets/img/eu.jpg"
                   class="user-image rounded-circle shadow"
                   alt="User Image"
                 />
@@ -127,9 +126,9 @@
                 <!--begin::User Image-->
                 <li class="user-header text-bg-primary">
                   <img
-                    src="../../dist/assets/img/user2-160x160.jpg"
+                    src="../../src/assets/img/eu.jpg"
                     class="rounded-circle shadow"
-                    alt="User Image"
+                    alt="user"
                   />
                   <p>
                     Adão Magalhães - Administrador
@@ -138,14 +137,12 @@
                 </li>
                 
                 <li class="user-body">
-                  <!--begin::Row-->
                 
-                  <!--end::Row-->
                 </li>
                
                 <li class="user-footer">
                   <a href="#" class="btn btn-default btn-flat">Perfil</a>
-                  <a href="#" class="btn btn-default btn-flat float-end">Sair</a>
+                  <a href="../../../index.php" class="btn btn-default btn-flat float-end">Sair</a>
                 </li>
                 <!--end::Menu Footer-->
               </ul>
