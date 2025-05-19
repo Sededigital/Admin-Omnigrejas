@@ -34,7 +34,10 @@
                   <div class="info-box-content">
                     <span class="info-box-text d-flex justify-content-between align-items-center">
                      Obreiros
-                      <button class="btn btn-sm btn-outline-primary ms-auto" data-bs-toggle="modal" data-bs-target="#modalCategoria">Nova</button>
+                     <button class="btn btn-sm btn-outline-primary ms-auto" data-bs-toggle="modal" data-bs-target="#modalCategoria">
+                      Novo
+                    </button>
+
                     </span>
                     <span class="info-box-number">5</span>
                   </div>
@@ -148,18 +151,7 @@
           </div>
           
           
-          <style>
-            .sortable {
-              cursor: pointer;
-            }
-            .sortable i {
-              font-size: 0.75rem;
-              margin-left: 0.25rem;
-            }
-            .badge {
-              font-weight: 500;
-            }
-          </style>
+         
            
             <!--end::Row-->
           </div>
@@ -167,4 +159,52 @@
         </div>
         <!--end::App Content-->
       </main>
+
+
+      <!---modal--->
+<div class="modal fade" id="modalCategoria" tabindex="-1" aria-labelledby="modalCategoriaLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalCategoriaLabel">Cadastrar novo obreiro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+
+      <div class="modal-body">
+        <form id="formCategoria">
+
+          <!-- Nome -->
+          <div class="mb-3">
+            <label for="nomeCategoria" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nomeCategoria" placeholder="Digite o nome">
+          </div>
+
+          <!-- Igreja pertencente -->
+          <div class="mb-3">
+            <label for="igrejaSelect" class="form-label">Igreja pertencente</label>
+            <select class="form-select" id="igrejaSelect">
+              <option selected disabled>Selecione a igreja</option>
+              <option value="1">Igreja Central</option>
+              <option value="2">Igreja Esperança</option>
+              <option value="3">Igreja Vida Nova</option>
+              <!-- Adicione mais aqui -->
+            </select>
+          </div>
+
+          <!-- Outras opções -->
+        
+
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
      
