@@ -16,7 +16,8 @@
       name="keywords"
       content="bootstrap 5, bootstrap, bootstrap 5 admin dashboard, bootstrap 5 dashboard, bootstrap 5 charts, bootstrap 5 calendar, bootstrap 5 datepicker, bootstrap 5 tables, bootstrap 5 datatable, vanilla js datatable, colorlibhq, colorlibhq dashboard, colorlibhq admin dashboard"
     />
-  
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 
@@ -375,7 +376,16 @@
 
 <!-- AdminLTE JS -->
 <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2.0/dist/js/adminlte.min.js"></script>
-  
+  <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+<script>
+  var quill = new Quill('#editorDescricao', {
+    theme: 'snow'
+  });
+
+  function capturarDescricao() {
+    document.getElementById('descricao').value = quill.root.innerHTML;
+  }
+</script>
   </body>
  
 </html>
