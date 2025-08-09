@@ -36,17 +36,15 @@
       integrity="sha256-9kPW/n5nn53j4WMRYAxe9c1rCY96Oogo/MKSVdKzPmI="
       crossorigin="anonymous"
     />
-    <!--end::Third Party Plugin(Bootstrap Icons)-->
-    <!--begin::Required Plugin(AdminLTE)-->
-        <link rel="stylesheet" href="../DashOmnigrejas/src/dist/css/adminlte.css" />
-    <!--end::Required Plugin(AdminLTE)-->
+
+        <link rel="stylesheet" href="src/dist/css/adminlte.css" />
   </head>
   <!--end::Head-->
   <!--begin::Body-->
   <body class="register-page bg-body-secondary">
     <div class="register-box">
       <div class="register-logo">
-        <img src="../DashOmnigrejas/src/dist/assets/img/logo.png" width="100" height="100" alt=""> <br>
+        <img src="../Admin-Omnigrejas/src/dist/assets/img/logo.png" width="100" height="100" alt=""> <br>
 
         <a href="../index2.html">Omnigrejas | Criar Conta</a>
       </div>

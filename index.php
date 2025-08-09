@@ -36,7 +36,7 @@
       crossorigin="anonymous"
     />
 
-        <link rel="stylesheet" href="../DashOmnigrejas/src/dist/css/adminlte.css" />
+        <link rel="stylesheet" href="src/dist/css/adminlte.css" />
 
     
 
@@ -46,14 +46,14 @@
   <body class="login-page bg-body-secondary">
     <div class="login-box">
       <div class="login-logo">
-        <img src="../DashOmnigrejas/src/dist/assets/img/logo.png" width="100" height="100" alt=""> <br>
-        <a href="../DashOmnigrejas/src/dist/pages/main.php">Omnigrejas | Login</a>
+        <img src="../Admin-Omnigrejas/src/dist/assets/img/logo.png" width="100" height="100" alt=""> <br>
+        <a href="src/dist/pages/main.php">Omnigrejas | Login</a>
       </div>
       <!-- /.login-logo -->
       <div class="card">
         <div class="card-body login-card-body">
           <p class="login-box-msg">Faça login para iniciar sua sessão</p>
-          <form action="../index3.html" method="post">
+          <form action="../Admin-Omnigrejas/src/dist/pages/main.php" method="post">
             <div class="input-group mb-3">
               <input type="email" class="form-control" placeholder="Email" />
               <div class="input-group-text"><span class="bi bi-envelope"></span></div>

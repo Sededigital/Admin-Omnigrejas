@@ -1,8 +1,6 @@
 
         <div class="app-content">
-          <!--begin::Container-->
           <div class="container-fluid">
-            <!-- Info boxes -->
             <div class="row">
               <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box">
@@ -10,16 +8,13 @@
                     <i class="bi bi-check-circle-fill"></i>
                   </span>
                   <div class="info-box-content">
-                    <span class="info-box-text">Igrejas Ativas</span>
+                    <span class="info-box-text">Igrejas Ativas </span>
                     <span class="info-box-number">
                       310
                     </span>
                   </div>
-                  <!-- /.info-box-content -->
                 </div>
-                <!-- /.info-box -->
               </div>
-              <!-- /.col -->
               <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box">
                   <span class="info-box-icon text-bg-warning shadow-sm">
@@ -29,13 +24,8 @@
                     <span class="info-box-text">Ativação Pendente</span>
                     <span class="info-box-number">100</span>
                   </div>
-                  <!-- /.info-box-content -->
                 </div>
-                <!-- /.info-box -->
               </div>
-              <!-- /.col -->
-              <!-- fix for small devices only -->
-              <!-- <div class="clearfix hidden-md-up"></div> -->
               <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box">
                   <span class="info-box-icon text-bg-primary shadow-sm">
@@ -45,11 +35,8 @@
                     <span class="info-box-text">Total de Igrejas</span>
                     <span class="info-box-number">410</span>
                   </div>
-                  <!-- /.info-box-content -->
                 </div>
-                <!-- /.info-box -->
               </div>
-              <!-- /.col -->
               <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box">
                   <span class="info-box-icon text-bg-info shadow-sm">
@@ -59,21 +46,15 @@
                     <span class="info-box-text">Criar Igrejas</span>
                     <span class="info-box-number">
                       <button class="btn btn-sm btn-outline-info px-3 mt-1" data-bs-toggle="modal" data-bs-target="#modalIgreja">
-  Nova
-</button>
+                        Nova
+                      </button>
 
                     </span>
                   </div>
-                  <!-- /.info-box-content -->
                 </div>
-                <!-- /.info-box -->
               </div>
-              <!-- /.col -->
             </div>
-            <!-- /.row -->
-            <!--begin::Row-->
            
-           <!----tabela--->
            <div class="row mt-4">
             <div class="col-12">
               <div class="card shadow-sm">
@@ -200,12 +181,9 @@
 
 
            
-            <!--end::Row-->
           </div>
-          <!--end::Container-->
         </div>
 
-        <!---modal igreja-->
 
         <div class="modal fade" id="modalIgreja" tabindex="-1" aria-labelledby="modalIgrejaLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
