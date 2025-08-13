@@ -4,6 +4,61 @@
         <div class="app-content-header">
           <!--begin::Container-->
           <div class="container-fluid">
+
+          <!---modal--->
+
+          <!-- Botão no header da tabela -->
+
+
+<!-- Modal de Cadastro -->
+<div class="modal fade" id="modalCadastro" tabindex="-1" aria-labelledby="modalCadastroLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-white">
+        <h5 class="modal-title" id="modalCadastroLabel"><i class="bi bi-pencil-square me-2"></i>Novo Registro Financeiro</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <form>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Quantia (Kz)</label>
+            <input type="number" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Igreja</label>
+            <select class="form-select" required>
+              <option selected disabled>Selecione</option>
+              <option>Igreja Sagrada Luz</option>
+              <option>Igreja Central da Fé</option>
+              <option>Igreja Avivamento Total</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Tipo</label>
+            <select class="form-select" required>
+              <option selected disabled>Selecione</option>
+              <option value="entrada">Entrada</option>
+              <option value="saida">Saída</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Nota</label>
+            <textarea class="form-control" rows="2"></textarea>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Data</label>
+            <input type="date" class="form-control" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-success">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
             <!--begin::Row-->
             <div class="row">
               <div class="col-sm-6"><h3 class="mb-0">Gestão de Valores</h3></div>
@@ -106,111 +161,132 @@
             <!-- /.row -->
             <!--begin::Row-->
            
-           <!----tabela--->
-           <div class="row mt-4"> 
-            <div class="col-12">
-              <div class="card shadow-sm">
-                <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-                  <h3 class="card-title mb-0">Registros Financeiros</h3>
-                  <span class="badge bg-light text-dark rounded-pill">3 registros</span>
-                </div>
-                <div class="card-body">
-                  <div class="row mb-3">
-                    <div class="col-auto">
-                      <div class="btn-group" role="group" aria-label="Exportar dados">
-                        <button class="btn btn-light" title="Exportar para CSV">
-                          <i class="bi bi-filetype-csv text-primary"></i>
-                        </button>
-                        <button class="btn btn-light" title="Exportar para Excel">
-                          <i class="bi bi-file-earmark-excel text-success"></i>
-                        </button>
-                        <button class="btn btn-light" title="Exportar para PDF">
-                          <i class="bi bi-file-earmark-pdf text-danger"></i>
-                        </button>
-                        <button class="btn btn-light" title="Imprimir">
-                          <i class="bi bi-printer text-dark"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="col-md-4 ms-auto">
-                      <div class="input-group">
-                        <span class="input-group-text"><i class="bi bi-search"></i></span>
-                        <input type="text" class="form-control" placeholder="Pesquisar...">
-                      </div>
-                    </div>
-                  </div>
+ 
           
-                  <div class="table-responsive">
-                    <table class="table table-striped table-hover align-middle">
-                      <thead class="table-light">
-                        <tr>
-                          <th>Quantia (Kz)</th>
-                          <th>Igreja</th>
-                          <th>Tipo</th>
-                          <th>Nota</th>
-                          <th>Data</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>150.000</td>
-                          <td>Igreja Sagrada Luz</td>
-                          <td>
-                            <span class="badge bg-success"><i class="bi bi-arrow-down-circle me-1"></i>Entrada</span>
-                          </td>
-                          <td>Dízimos e ofertas</td>
-                          <td>2025-05-01</td>
-                        </tr>
-                        <tr>
-                          <td>90.000</td>
-                          <td>Igreja Central da Fé</td>
-                          <td>
-                            <span class="badge bg-danger"><i class="bi bi-arrow-up-circle me-1"></i>Saída</span>
-                          </td>
-                          <td>Pagamento do aluguel</td>
-                          <td>2025-05-02</td>
-                        </tr>
-                        <tr>
-                          <td>50.000</td>
-                          <td>Igreja Avivamento Total</td>
-                          <td>
-                            <span class="badge bg-success"><i class="bi bi-arrow-down-circle me-1"></i>Entrada</span>
-                          </td>
-                          <td>Doação especial</td>
-                          <td>2025-05-03</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-          
-                  <div class="row mt-3">
-                    <div class="col-md-6">
-                      <p class="text-muted small">Mostrando 1-3 de 3 registros</p>
-                    </div>
-                    <div class="col-md-6">
-                      <nav aria-label="Navegação de página">
-                        <ul class="pagination pagination-sm justify-content-end">
-                          <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
-                          </li>
-                          <li class="page-item active" aria-current="page">
-                            <a class="page-link" href="#">1</a>
-                          </li>
-                          <li class="page-item disabled">
-                            <a class="page-link" href="#">Próximo</a>
-                          </li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-          
-                </div>
-              </div>
-            </div>
+          <!-- Botão no header da tabela -->
+<div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+  <h3 class="card-title mb-0">Registros Financeiros</h3>
+  <div class="d-flex align-items-center gap-2">
+    <span id="contador-registros" class="badge bg-light text-dark rounded-pill">0 registros</span>
+    <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalCadastro">
+      <i class="bi bi-plus-circle me-1"></i> Cadastrar Registro
+    </button>
+  </div>
+</div>
+
+<!-- Tabela -->
+<div class="table-responsive">
+  <table class="table table-striped mb-0">
+    <thead>
+      <tr>
+        <th>Quantia (Kz)</th>
+        <th>Igreja</th>
+        <th>Tipo</th>
+        <th>Nota</th>
+        <th>Data</th>
+      </tr>
+    </thead>
+    <tbody id="tabela-corpo">
+      <!-- Registros serão adicionados aqui -->
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal de Cadastro -->
+<div class="modal fade" id="modalCadastro" tabindex="-1" aria-labelledby="modalCadastroLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-white">
+        <h5 class="modal-title" id="modalCadastroLabel"><i class="bi bi-pencil-square me-2"></i>Novo Registro Financeiro</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <form id="formCadastro">
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Quantia (Kz)</label>
+            <input type="number" id="quantia" class="form-control" required>
           </div>
-          
-          
-          
+          <div class="mb-3">
+            <label class="form-label">Igreja</label>
+            <select id="igreja" class="form-select" required>
+              <option selected disabled>Selecione</option>
+              <option>Igreja Sagrada Luz</option>
+              <option>Igreja Central da Fé</option>
+              <option>Igreja Avivamento Total</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Tipo</label>
+            <select id="tipo" class="form-select" required>
+              <option selected disabled>Selecione</option>
+              <option value="entrada">Entrada</option>
+              <option value="saida">Saída</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Nota</label>
+            <textarea id="nota" class="form-control" rows="2"></textarea>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Data</label>
+            <input type="date" id="data" class="form-control" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-success">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("formCadastro");
+  const tabelaCorpo = document.getElementById("tabela-corpo");
+  const contador = document.getElementById("contador-registros");
+
+  let totalRegistros = 0;
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Pega valores
+    const quantia = document.getElementById("quantia").value;
+    const igreja = document.getElementById("igreja").value;
+    const tipo = document.getElementById("tipo").value;
+    const nota = document.getElementById("nota").value;
+    const data = document.getElementById("data").value;
+
+    // Cria nova linha
+    const novaLinha = document.createElement("tr");
+    novaLinha.innerHTML = `
+      <td>${quantia}</td>
+      <td>${igreja}</td>
+      <td><span class="badge ${tipo === 'entrada' ? 'bg-success' : 'bg-danger'}">${tipo}</span></td>
+      <td>${nota}</td>
+      <td>${data}</td>
+    `;
+
+    // Adiciona na tabela
+    tabelaCorpo.appendChild(novaLinha);
+
+    // Atualiza contador
+    totalRegistros++;
+    contador.textContent = `${totalRegistros} registro${totalRegistros > 1 ? 's' : ''}`;
+
+    // Fecha modal
+    const modal = bootstrap.Modal.getInstance(document.getElementById('modalCadastro'));
+    modal.hide();
+
+    // Limpa formulário
+    form.reset();
+  });
+});
+</script>
+
       
            
             <!--end::Row-->

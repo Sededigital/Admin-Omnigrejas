@@ -259,7 +259,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       
-      <div class="modal-header bg-success text-white">
+      <div class="modal-header   bg-success text-white">
         <h5 class="modal-title" id="modalProdutoLabel">Cadastrar Produto</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
       </div>

@@ -126,7 +126,19 @@
   --bs-form-invalid-border-color: #dc3545;
 }
 
+.modal-backdrop,
+.modal-backdrop.fade,
+.modal-backdrop.show {
+  background-color: rgba(0,0,0,0.5) !important;
+  opacity: 0.5 !important;
+  backdrop-filter: none !important;
+}
+
+
 [data-bs-theme=dark] {
+
+  --bs-modal-backdrop-bg: rgba(0,0,0,0.5);
+  --bs-modal-backdrop-opacity: 0.5;
   color-scheme: dark;
   --bs-body-color: #dee2e6;
   --bs-body-color-rgb: 222, 226, 230;
@@ -187,6 +199,16 @@
 *::after {
   box-sizing: border-box;
 }
+
+.modal-backdrop.show {
+  background-color: rgba(0, 0, 0, 0.5) !important; /* preto com 50% de opacidade */
+}
+
+
+.modal-backdrop.show {
+  background-color: rgba(0, 0, 0, 0.3) !important; /* mais transparente */
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   :root {

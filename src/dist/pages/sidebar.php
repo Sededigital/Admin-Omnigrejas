@@ -91,13 +91,13 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="?pagina=gestao_membros" class="nav-link">
                       <i class="nav-icon bi bi-person-plus-fill"></i>
                       <p>Criar</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="?pagina=cartao_membros" class="nav-link">
                       <i class="nav-icon bi bi-credit-card-fill"></i>
                       <p>Cartão</p>
                     </a>
