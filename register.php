@@ -1,4 +1,97 @@
+<?php
+// Teste das variáveis do .env
+function loadEnv($path) {
+    if (!file_exists($path)) {
+        throw new Exception('.env file not found');
+    }
+    
+    $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        $line = trim($line);
+        
+        // Pular comentários e linhas vazias
+        if (empty($line) || strpos($line, '#') === 0) {
+            continue;
+        }
+        
+        // Verificar se a linha contém um comentário inline
+        if (strpos($line, '#') !== false) {
+            // Pegar apenas a parte antes do comentário
+            $line = trim(explode('#', $line)[0]);
+        }
+        
+        // Verificar se ainda tem conteúdo após remover comentários
+        if (empty($line) || strpos($line, '=') === false) {
+            continue;
+        }
+        
+        list($name, $value) = explode('=', $line, 2);
+        $_ENV[trim($name)] = trim($value);
+    }
+}
 
+try {
+    // Carregar .env
+    loadEnv('.env');
+    
+    echo "<h2>🧪 Teste das variáveis do .env</h2>";
+    echo "<hr>";
+    
+    // Testar variáveis
+    $vars = ['SUPABASE_URL', 'SUPABASE_ANON_KEY', 'SUPABASE_SERVICE_ROLE_KEY'];
+    
+    foreach ($vars as $var) {
+        if (isset($_ENV[$var])) {
+            echo "<p><strong>✅ {$var}:</strong><br>";
+            
+            if ($var === 'SUPABASE_URL') {
+                echo $_ENV[$var] . "</p>";
+            } else {
+                // Mostrar apenas início e fim das chaves por segurança
+                $value = $_ENV[$var];
+                $masked = substr($value, 0, 10) . '...' . substr($value, -10);
+                echo $masked . "</p>";
+            }
+        } else {
+            echo "<p><strong>❌ {$var}:</strong> Não encontrada</p>";
+        }
+    }
+    
+    echo "<hr>";
+    echo "<h3>🔗 Teste de conexão com Supabase</h3>";
+    
+    // Teste simples de conexão
+    $url = $_ENV['SUPABASE_URL'] . "/rest/v1/";
+    $headers = [
+        'apikey: ' . $_ENV['SUPABASE_ANON_KEY'],
+        'Authorization: Bearer ' . $_ENV['SUPABASE_ANON_KEY']
+    ];
+    
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+    
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+    
+    if ($httpCode == 200) {
+        echo "<p><strong>✅ Conexão:</strong> Supabase conectado com sucesso!</p>";
+    } else {
+        echo "<p><strong>❌ Conexão:</strong> Erro HTTP {$httpCode}</p>";
+        echo "<p><strong>Resposta:</strong> " . htmlspecialchars($response) . "</p>";
+    }
+    
+} catch (Exception $e) {
+    echo "<p><strong>❌ Erro:</strong> " . $e->getMessage() . "</p>";
+}
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
     <title>Omnigrejas | Criar conta</title>
     <!--begin::Primary Meta Tags-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -36,40 +129,48 @@
       integrity="sha256-9kPW/n5nn53j4WMRYAxe9c1rCY96Oogo/MKSVdKzPmI="
       crossorigin="anonymous"
     />
-
-        <link rel="stylesheet" href="src/dist/css/adminlte.css" />
-  </head>
-  <!--end::Head-->
-  <!--begin::Body-->
-  <body class="register-page bg-body-secondary">
+    <link rel="stylesheet" href="src/dist/css/adminlte.css" />
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+<body class="register-page bg-body-secondary">
     <div class="register-box">
       <div class="register-logo">
         <img src="../Admin-Omnigrejas/src/dist/assets/img/logo.png" width="100" height="100" alt=""> <br>
-
         <a href="../index2.html">Omnigrejas | Criar Conta</a>
       </div>
       <!-- /.register-logo -->
       <div class="card">
         <div class="card-body register-card-body">
           <p class="register-box-msg">Registre uma nova conta</p>
-          <form action="../index3.html" method="post">
+          
+          <?php if ($message): ?>
+            <div class="alert alert-<?php echo $messageType === 'success' ? 'success' : 'danger'; ?> alert-dismissible">
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              <?php echo htmlspecialchars($message); ?>
+            </div>
+          <?php endif; ?>
+          
+          <form method="post" action="">
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Nome Completo" />
+              <input type="text" name="nome" class="form-control" placeholder="Nome Completo" required 
+                     value="<?php echo htmlspecialchars($_POST['nome'] ?? ''); ?>" />
               <div class="input-group-text"><span class="bi bi-person"></span></div>
             </div>
             <div class="input-group mb-3">
-              <input type="email" class="form-control" placeholder="Email" />
+              <input type="email" name="email" class="form-control" placeholder="Email" required 
+                     value="<?php echo htmlspecialchars($_POST['email'] ?? ''); ?>" />
               <div class="input-group-text"><span class="bi bi-envelope"></span></div>
             </div>
             <div class="input-group mb-3">
-              <input type="password" class="form-control" placeholder="Senha" />
+              <input type="password" name="senha" class="form-control" placeholder="Senha (mín. 6 caracteres)" required minlength="6" />
               <div class="input-group-text"><span class="bi bi-lock-fill"></span></div>
             </div>
             <!--begin::Row-->
             <div class="row">
               <div class="col-12 mb-3">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                  <input class="form-check-input" type="checkbox" name="termos" value="1" id="flexCheckDefault" required />
                   <label class="form-check-label" for="flexCheckDefault">
                     Eu concordo com os <a href="#">termos</a>
                   </label>
