@@ -12,6 +12,6 @@ class Dashboard extends Component
 {
     public function render()
     {
-        return view('system.admins.super-admin.dashboard');
+        return view('system.admin.super-admin.dashboard');
     }
 }

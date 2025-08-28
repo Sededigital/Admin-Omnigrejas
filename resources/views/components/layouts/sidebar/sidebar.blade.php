@@ -76,7 +76,7 @@
                     </a>
                     <ul class="sub-nav collapse" id="horizontal-menu" data-bs-parent="#sidebar-menu">
                       <li class="nav-item">
-                            <a class="nav-link" href="#" wire:navigate >
+                            <a class="nav-link" href="#" wire:navigate wire:current="active">
                                 <i class="icon">
                                     <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="none">
                                         <path opacity="0.4" d="M3 5C3 4.44772 3.44772 4 4 4H10C11.6569 4 13 5.34315 13 7V19C13 20.6569 11.6569 22 10 22H4C3.44772 22 3 21.5523 3 21V5Z" fill="currentColor"/>
@@ -89,7 +89,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link " href="../dashboard/index-dual-horizontal.html">
+                            <a class="nav-link " href="" wire:navigate wire:current="active">
                                 <i class="icon">
                                     <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -102,7 +102,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="../dashboard/index-dual-compact.html">
+                            <a class="nav-link " href="" wire:navigate wire:current="active">
                                 <i class="icon svg-icon">
                                     <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -119,7 +119,7 @@
 
                 <li><hr class="hr-horizontal"></li>
                 <li class="nav-item static-item">
-                    <a class="nav-link static-item disabled" href="#" tabindex="-1">
+                    <a class="nav-link static-item disabled" href="#" tabindex="-1" >
                         <span class="default-icon">Gestão Organizacional</span>
                         <span class="mini-icon">-</span>
                     </a>
@@ -155,7 +155,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="../dashboard/special-pages/billing.html">
+                            <a class="nav-link " href="" wire:navigate wire:current="active">
                                 <i class="icon">
                                     <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -168,7 +168,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="../dashboard/special-pages/calender.html">
+                            <a class="nav-link " href="" wire:navigate wire:current="active">
                                 <i class="icon">
                                     <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -181,7 +181,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="../dashboard/special-pages/kanban.html">
+                            <a class="nav-link " href="" wire:navigate wire:current="active">
                                 <i class="icon">
                                     <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -214,7 +214,7 @@
                         </a>
                         <ul class="sub-nav collapse" id="sidebar-user" data-bs-parent="#sidebar-menu">
                             <li class="nav-item">
-                                <a class="nav-link " href="../dashboard/app/user-profile.html">
+                                <a class="nav-link " href="" wire:navigate wire:current="active">
                                     <i class="icon">
                                         <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                             <g>
@@ -227,7 +227,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="../dashboard/app/user-add.html">
+                                <a class="nav-link " href="" wire:navigate wire:current="active">
                                     <i class="icon">
                                         <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                             <g>
@@ -240,7 +240,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="../dashboard/app/user-list.html">
+                                <a class="nav-link " href="" wire:navigate wire:current="active">
                                     <i class="icon">
                                         <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                             <g>
@@ -255,7 +255,7 @@
                         </ul>
                     </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://templates.iqonic.design/hope-ui/html/dist/#accordion">
+                    <a class="nav-link" href="" wire:navigate wire:current="active">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z" fill="currentColor"/>
@@ -268,7 +268,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://templates.iqonic.design/hope-ui/html/dist/#accordion">
+                    <a class="nav-link" href="" wire:navigate wire:current="active">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="currentColor"/>
@@ -282,7 +282,7 @@
 
 
                     <li class="nav-item">
-                        <a class="nav-link " href="../dashboard/maps/vector.html">
+                        <a class="nav-link " href="" wire:navigate wire:current="active">
                             <i class="icon">
                                 <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path opacity="0.4" d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" fill="currentColor"/>
@@ -333,7 +333,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="../dashboard/maps/vector.html">
+                            <a class="nav-link " href="" wire:navigate wire:current="active">
                                 <i class="icon">
                                     <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -348,7 +348,7 @@
                     </ul>
                 </li>
                  <li class="nav-item">
-                    <a class="nav-link " href="../dashboard/maps/vector.html">
+                    <a class="nav-link " href="" wire:navigate wire:current="active">
                          <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z" fill="currentColor"/>
@@ -363,7 +363,7 @@
                 </li>
 
                 <li class="nav-item">
-                        <a class="nav-link " href="../dashboard/maps/vector.html">
+                        <a class="nav-link " href="" wire:navigate wire:current="active">
                              <i class="icon">
                                 <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path opacity="0.4" d="M3 3h18c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2z" fill="currentColor"/>
@@ -395,7 +395,7 @@
                                 <path d="M15.4303 11.5887L14.2513 12.7367L14.5303 14.3597C14.5783 14.6407 14.4653 14.9177 14.2343 15.0837C14.0053 15.2517 13.7063 15.2727 13.4543 15.1387L11.9993 14.3737L10.5413 15.1397C10.4333 15.1967 10.3153 15.2267 10.1983 15.2267C10.0453 15.2267 9.89434 15.1787 9.76434 15.0847C9.53434 14.9177 9.42134 14.6407 9.46934 14.3597L9.74734 12.7367L8.56834 11.5887C8.36434 11.3907 8.29334 11.0997 8.38134 10.8287C8.47034 10.5587 8.70034 10.3667 8.98134 10.3267L10.6073 10.0897L11.3363 8.61268C11.4633 8.35868 11.7173 8.20068 11.9993 8.20068H12.0013C12.2843 8.20168 12.5383 8.35968 12.6633 8.61368L13.3923 10.0897L15.0213 10.3277C15.2993 10.3667 15.5293 10.5587 15.6173 10.8287C15.7063 11.0997 15.6353 11.3907 15.4303 11.5887Z" fill="currentColor"></path>
                             </svg>
                         </i>
-                        <span class="item-name">Gerir</span>
+                        <span class="item-name">Gerenciar</span>
                         <i class="right-icon">
                             <svg class="icon-18" xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -404,7 +404,7 @@
                     </a>
                     <ul class="sub-nav collapse" id="sidebar-widget" data-bs-parent="#sidebar-menu">
                         <li class="nav-item">
-                            <a class="nav-link " href="../dashboard/widget/widgetbasic.html">
+                            <a class="nav-link " href="" wire:navigate wire:current="active">
                                 <i class="icon">
                                     <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -417,7 +417,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="../dashboard/widget/widgetchart.html">
+                            <a class="nav-link " href="" wire:navigate wire:current="active">
                                 <i class="icon">
                                     <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -430,7 +430,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                            <a class="nav-link " href="../dashboard/widget/widgetcard.html">
+                            <a class="nav-link " href="" wire:navigate wire:current="active">
                                 <i class="icon">
                                     <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -446,7 +446,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="https://templates.iqonic.design/hope-ui/html/dist/#accordion">
+                    <a class="nav-link" href="" wire:navigate wire:current="active">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z" fill="currentColor"/>
@@ -470,7 +470,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="https://templates.iqonic.design/hope-ui/html/dist/#accordion">
+                    <a class="nav-link" href="" wire:navigate wire:current="active">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z" fill="currentColor"/>
@@ -485,7 +485,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://templates.iqonic.design/hope-ui/html/dist/#accordion">
+                    <a class="nav-link" href="" wire:navigate wire:current="active">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="currentColor"/>
@@ -498,7 +498,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://templates.iqonic.design/hope-ui/html/dist/#accordion">
+                    <a class="nav-link" href="" wire:navigate wire:current="active">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z" fill="currentColor"/>
@@ -523,7 +523,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="https://templates.iqonic.design/hope-ui/html/dist/#accordion">
+                    <a class="nav-link" href="" wire:navigate wire:current="active">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="currentColor"/>
@@ -538,7 +538,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="https://templates.iqonic.design/hope-ui/html/dist/#accordion">
+                    <a class="nav-link" href="" wire:navigate wire:current="active">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V18C19 19.1 18.1 20 17 20H7C5.9 20 5 19.1 5 18V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7Z" fill="currentColor"/>
@@ -552,7 +552,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://templates.iqonic.design/hope-ui/html/dist/#accordion">
+                    <a class="nav-link" href="" wire:navigate wire:current="active">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z" fill="currentColor"/>
@@ -566,7 +566,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://templates.iqonic.design/hope-ui/html/dist/#accordion">
+                    <a class="nav-link" href="" wire:navigate wire:current="active">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z" fill="currentColor"/>
@@ -577,7 +577,7 @@
                     </a>
                 </li>
                 <li class="nav-item m-2">
-                    <a class="nav-link" href="https://templates.iqonic.design/hope-ui/html/dist/#accordion">
+                    <a class="nav-link" href="" wire:navigate wire:current="active">
 
                         <span class="item-name"></span>
                     </a>

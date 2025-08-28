@@ -7,18 +7,18 @@
                   <div class="col-md-10">
                      <div class="card card-transparent shadow-none d-flex justify-content-center mb-0 auth-card">
                         <div class="card-body z-3 px-md-0 px-lg-4">
-                           <a href="../../dashboard/index.html" class="navbar-brand d-flex align-items-center mb-3">
+                           <a href="{{ url('/login') }}" class="navbar-brand d-flex align-items-center mb-3">
 
                               <!--Logo start-->
                               <div class="logo-main">
                                  <div class="logo-mini">
 
-                                        <img src="{{ asset('assets/images/icons/icon.png') }}" alt="logo">
+                                        <img src="{{ asset('system/img/logo-system/icon.png') }}" alt="logo">
 
                                     </div>
 
                                   <div class="logo-mini">
-                                     <img src="{{ asset('assets/images/icons/icon.png') }}" alt="logo">
+                                     <img src="{{ asset('system/img/logo-system/icon.png') }}" alt="logo">
                                   </div>
 
                               </div>
@@ -76,12 +76,11 @@
                   </div>
                </div>
                <div class="sign-bg">
-               <img src="{{ asset('assets/images/icons/icon.png') }}"
+               <img src="{{ asset('system/img/logo-system/icon.png') }}"
                 alt="logo"
                 class="img-fluid opacity-75"
-                width="200" height="230"
-                style="max-width: 100px; max-height: 100px;" >
-
+                width="400" height="330"
+                style="max-width: 200px; max-height: 200px;" >
 
                </div>
             </div>
