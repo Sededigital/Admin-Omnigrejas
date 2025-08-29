@@ -8,6 +8,14 @@
     @livewireStyles
 </head>
 <body class="bg-gray-100 min-h-screen">
+
+     {{-- <div id="loading">
+      <div class="loader simple-loader">
+          <div class="loader-body">
+          </div>
+      </div>
+    </div> --}}
+
     <div class="font-sans text-gray-900 antialiased">
         {{ $slot }}
     </div>

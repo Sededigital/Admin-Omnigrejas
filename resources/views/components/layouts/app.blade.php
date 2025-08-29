@@ -5,14 +5,6 @@
     @livewireStyles
     <body>
 
-    {{--  loader Start  --}}
-    <div wire:loading  id="loading">
-      <div class="loader simple-loader">
-          <div class="loader-body">
-          </div>
-      </div>
-    </div>
-
 
     {{--  loader END  --}}
 

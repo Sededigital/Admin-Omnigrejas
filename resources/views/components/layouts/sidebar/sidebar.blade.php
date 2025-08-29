@@ -66,7 +66,7 @@
                     </a>
                     <ul class="sub-nav collapse" id="horizontal-menu" data-bs-parent="#sidebar-menu">
                       <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/church-bible-reading') }}" wire:navigate wire:current="active">
+                            <a class="nav-link" href="{{ url('churches/church-bible-reading') }}" wire:navigate wire:current="active">
                                 <i class="icon">
                                     <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="none">
                                         <path opacity="0.4" d="M3 5C3 4.44772 3.44772 4 4 4H10C11.6569 4 13 5.34315 13 7V19C13 20.6569 11.6569 22 10 22H4C3.44772 22 3 21.5523 3 21V5Z" fill="currentColor"/>
@@ -79,7 +79,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link " href="{{ url('/church-good-practices') }}" wire:navigate wire:current="active">
+                            <a class="nav-link " href="{{ url('churches/church-good-practices') }}" wire:navigate wire:current="active">
                                 <i class="icon">
                                     <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -92,7 +92,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="{{ url('/church-pastoral') }}" wire:navigate wire:current="active">
+                            <a class="nav-link " href="{{ url('churches/church-pastoral') }}" wire:navigate wire:current="active">
                                 <i class="icon svg-icon">
                                     <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -145,7 +145,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="{{ url('/only-churches') }}" wire:navigate wire:current="active">
+                            <a class="nav-link " href="{{ url('/churches/only-churches') }}" wire:navigate wire:current="active">
                                 <i class="icon">
                                     <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -158,7 +158,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="{{ url('/church-members') }}" wire:navigate wire:current="active">
+                            <a class="nav-link " href="{{ url('churches/church-members') }}" wire:navigate wire:current="active">
                                 <i class="icon">
                                     <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -171,7 +171,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="{{ url('/church-ministries') }}" wire:navigate wire:current="active">
+                            <a class="nav-link " href="{{ url('churches/church-ministries') }}" wire:navigate wire:current="active">
                                 <i class="icon">
                                     <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -204,7 +204,7 @@
                         </a>
                         <ul class="sub-nav collapse" id="sidebar-user" data-bs-parent="#sidebar-menu">
                             <li class="nav-item">
-                                <a class="nav-link " href="{{ url('/church-events') }}" wire:navigate wire:current="active">
+                                <a class="nav-link " href="{{ url('churches/church-events') }}" wire:navigate wire:current="active">
                                     <i class="icon">
                                         <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                             <g>
@@ -217,7 +217,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="{{ url('/church-scale') }}" wire:navigate wire:current="active">
+                                <a class="nav-link " href="{{ url('churches/church-scale') }}" wire:navigate wire:current="active">
                                     <i class="icon">
                                         <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                             <g>
@@ -230,7 +230,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="{{ url('/church-standard-cult') }}" wire:navigate wire:current="active">
+                                <a class="nav-link " href="{{ url('churches/church-standard-cult') }}" wire:navigate wire:current="active">
                                     <i class="icon">
                                         <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                             <g>
@@ -245,7 +245,7 @@
                         </ul>
                     </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/church-talent-map') }}" wire:navigate wire:current="active">
+                    <a class="nav-link" href="{{ url('churches/church-talent-map') }}" wire:navigate wire:current="active">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z" fill="currentColor"/>
@@ -258,7 +258,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/churcj-items') }}" wire:navigate wire:current="active">
+                    <a class="nav-link" href="{{ url('churches/church-items') }}" wire:navigate wire:current="active">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="currentColor"/>
@@ -272,7 +272,7 @@
 
 
                     <li class="nav-item">
-                        <a class="nav-link " href="{{ url('/church-calendar') }}" wire:navigate wire:current="active">
+                        <a class="nav-link " href="{{ url('churches/church-calendar') }}" wire:navigate wire:current="active">
                             <i class="icon">
                                 <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path opacity="0.4" d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z" fill="currentColor"/>
@@ -310,7 +310,7 @@
                     </a>
                     <ul class="sub-nav collapse" id="sidebar-maps" data-bs-parent="#sidebar-menu">
                         <li class="nav-item">
-                            <a class="nav-link "  href="{{ url('/church-courses') }}" wire:navigate wire:current="active">
+                            <a class="nav-link "  href="{{ url('churches/church-courses') }}" wire:navigate wire:current="active">
                                 <i class="icon">
                                     <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -323,7 +323,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " href="{{ url('/church-course-registered') }}" wire:navigate wire:current="active">
+                            <a class="nav-link " href="{{ url('churches/church-course-registered') }}" wire:navigate wire:current="active">
                                 <i class="icon">
                                     <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -338,7 +338,7 @@
                     </ul>
                 </li>
                  <li class="nav-item">
-                    <a class="nav-link " href="{{ url('/church-cristian-life') }}" wire:navigate wire:current="active">
+                    <a class="nav-link " href="{{ url('churches/church-cristian-life') }}" wire:navigate wire:current="active">
                          <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z" fill="currentColor"/>
@@ -353,7 +353,7 @@
                 </li>
 
                 <li class="nav-item">
-                        <a class="nav-link " href="{{ url('/church-progress-report') }}" wire:navigate wire:current="active">
+                        <a class="nav-link " href="{{ url('churches/church-progress-report') }}" wire:navigate wire:current="active">
                              <i class="icon">
                                 <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path opacity="0.4" d="M3 3h18c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2z" fill="currentColor"/>
@@ -394,7 +394,7 @@
                     </a>
                     <ul class="sub-nav collapse" id="sidebar-widget" data-bs-parent="#sidebar-menu">
                         <li class="nav-item">
-                            <a class="nav-link " href="{{ url('/church-financial-moviment') }}" wire:navigate wire:current="active">
+                            <a class="nav-link " href="{{ url('churches/church-financial-moviment') }}" wire:navigate wire:current="active">
                                 <i class="icon">
                                     <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -407,7 +407,7 @@
                             </a>
                         </li>
                         {{-- <li class="nav-item">
-                            <a class="nav-link " href="{{ url('/church-') }}" wire:navigate wire:current="active">
+                            <a class="nav-link " href="{{ url('churches/church-') }}" wire:navigate wire:current="active">
                                 <i class="icon">
                                     <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -420,7 +420,7 @@
                             </a>
                         </li> --}}
                             <li class="nav-item">
-                            <a class="nav-link " href="{{ url('/church-financial-report') }}" wire:navigate wire:current="active">
+                            <a class="nav-link " href="{{ url('churches/church-financial-report') }}" wire:navigate wire:current="active">
                                 <i class="icon">
                                     <svg class="icon-10" xmlns="http://www.w3.org/2000/svg" width="10" viewBox="0 0 24 24" fill="currentColor">
                                         <g>
@@ -436,7 +436,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/church-online-donations') }}" wire:navigate wire:current="active">
+                    <a class="nav-link" href="{{ url('churches/church-online-donations') }}" wire:navigate wire:current="active">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z" fill="currentColor"/>
@@ -495,14 +495,14 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/church-chats') }}" wire:navigate wire:current="active">
+                                <a class="nav-link" href="{{ url('churches/church-chats') }}" wire:navigate wire:current="active">
                                     <i class="icon"><svg class="icon-10"><circle cx="12" cy="12" r="8" fill="currentColor"/></svg></i>
                                     <i class="sidenav-mini-icon"> CC </i>
                                     <span class="item-name">Chats da Igreja</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/church-chat-messages') }}" wire:navigate wire:current="active">
+                                <a class="nav-link" href="{{ url('churches/church-chat-messages') }}" wire:navigate wire:current="active">
                                     <i class="icon"><svg class="icon-10"><circle cx="12" cy="12" r="8" fill="currentColor"/></svg></i>
                                     <i class="sidenav-mini-icon"> CM </i>
                                     <span class="item-name">Mensagens de Chat</span>
@@ -522,7 +522,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/church-volunteers') }}" wire:navigate wire:current="active">
+                    <a class="nav-link" href="{{ url('churches/church-volunteers') }}" wire:navigate wire:current="active">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z" fill="currentColor"/>
@@ -537,7 +537,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/church-resources') }}" wire:navigate wire:current="active">
+                    <a class="nav-link" href="{{ url('churches/church-resources') }}" wire:navigate wire:current="active">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="currentColor"/>
@@ -550,7 +550,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/church-pastoral-care') }}" wire:navigate wire:current="active">
+                    <a class="nav-link" href="{{ url('churches/church-pastoral-care') }}" wire:navigate wire:current="active">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z" fill="currentColor"/>
@@ -575,7 +575,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/church-products') }}" wire:navigate wire:current="active">
+                    <a class="nav-link" href="{{ url('churches/church-products') }}" wire:navigate wire:current="active">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="currentColor"/>
@@ -590,7 +590,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/church-orders') }}" wire:navigate wire:current="active">
+                    <a class="nav-link" href="{{ url('churches/church-orders') }}" wire:navigate wire:current="active">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V18C19 19.1 18.1 20 17 20H7C5.9 20 5 19.1 5 18V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7Z" fill="currentColor"/>
@@ -604,7 +604,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/church-payments') }}" wire:navigate wire:current="active">
+                    <a class="nav-link" href="{{ url('churches/church-payments') }}" wire:navigate wire:current="active">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z" fill="currentColor"/>
@@ -618,7 +618,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/church-settings') }}" wire:navigate wire:current="active">
+                    <a class="nav-link" href="{{ url('churches/church-settings') }}" wire:navigate wire:current="active">
                         <i class="icon">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path opacity="0.4" d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z" fill="currentColor"/>

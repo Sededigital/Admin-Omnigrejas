@@ -179,10 +179,13 @@
                         </div>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="../dashboard/app/user-profile.html">Profile</a></li>
-                            <li><a class="dropdown-item" href="../dashboard/app/user-privacy-setting.html">Privacy Setting</a></li>
+                            <li><a class="dropdown-item" href="../dashboard/app/user-profile.html">Perfil</a></li>
+                            <li><a class="dropdown-item" href="../dashboard/app/user-privacy-setting.html">Definições</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            @livewire('auth.logout')
+                            <form method="POST" action="{{ route('logout') }}">
+                                 @csrf
+                             <li><button  type="submit" class="dropdown-item" >Logout</button></li>
+                            </form>
                         </ul>
                     </li>
                 </ul>

@@ -6,13 +6,16 @@ use App\Traits\HasAuditoria;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Laravel\Fortify\TwoFactorAuthenticatable;
+use App\Notifications\VerifyEmailNotification;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable  implements MustVerifyEmail
 {
-    use HasFactory, Notifiable, SoftDeletes, HasAuditoria;
+    use HasFactory, Notifiable, SoftDeletes, HasAuditoria, TwoFactorAuthenticatable;
 
     protected $table = 'users';
     protected $primaryKey = 'id';
@@ -32,10 +35,23 @@ class User extends Authenticatable
         'created_by',
     ];
 
-    protected $casts = [
+     protected $hidden = [
         'is_active' => 'boolean',
-        'password'  => 'hashed',
+        'password',
+        'remember_token',
+        'two_factor_recovery_codes',
+        'two_factor_secret',
     ];
+
+
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+            'two_factor_confirmed_at' => 'datetime',
+        ];
+    }
 
       // ========================================
     // Constantes de Roles (igual ao ENUM do DB)
@@ -63,6 +79,12 @@ class User extends Authenticatable
         self::ROLE_ANONYMOUS,
     ];
 
+
+    public function sendEmailVerificationNotification()
+    {
+
+        $this->notify(new VerifyEmailNotification);
+    }
 
     // 🔗 RELACIONAMENTOS
     public function createdBy()
@@ -103,6 +125,17 @@ class User extends Authenticatable
     public function isAnonymous(): bool
     {
         return $this->role === self::ROLE_ANONYMOUS;
+    }
+
+    public function redirectDashboardRoute(): string
+    {
+        dd('adadda');
+        return match($this->role) {
+            'admin' => 'dashboard.administrative',
+            'root'  => 'dashboard.root',
+            'church' => 'dashboard.church',
+            default => 'dashboard',
+        };
     }
 
     // Exemplo de checagem de múltiplos roles
