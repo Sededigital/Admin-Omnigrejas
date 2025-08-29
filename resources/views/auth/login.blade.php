@@ -57,7 +57,7 @@
                                        <input type="checkbox" class="form-check-input" id="customCheck1" wire:model="remember">
                                        <label class="form-check-label" for="customCheck1">Lembra-se</label>
                                     </div>
-                                    <a href="{{ url('/forgot-password') }}">Esqueceu palavra-passe?</a>
+                                    <a href="{{ route('password.request') }}" wire:navigate >Esqueceu palavra-passe?</a>
                                  </div>
                               </div>
                               <div class="d-flex justify-content-center">
@@ -67,9 +67,9 @@
                                 </button>
 
                               </div>
-                              <p class="mt-3 text-center">
+                              {{-- <p class="mt-3 text-center">
                                  Não tem uma conta? <a href="{{ url('/register') }}" class="text-underline">Clique aqui para se inscrever.</a>
-                              </p>
+                              </p> --}}
                            </form>
                         </div>
                      </div>

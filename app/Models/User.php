@@ -127,9 +127,16 @@ class User extends Authenticatable  implements MustVerifyEmail
         return $this->role === self::ROLE_ANONYMOUS;
     }
 
-    public function redirectDashboardRoute(): string
+   public function redirectDashboardRoute(): string
     {
-        dd('adadda');
+        if (! $this->hasVerifiedEmail()) {
+            return 'verification.notice'; // rota para verificar email
+        }
+
+        if (! $this->two_factor_confirmed) { // ou como você identifica 2FA
+            return 'two-factor.login'; // rota de desafio 2FA
+        }
+
         return match($this->role) {
             'admin' => 'dashboard.administrative',
             'root'  => 'dashboard.root',

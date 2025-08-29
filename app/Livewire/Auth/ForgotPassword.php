@@ -2,13 +2,18 @@
 
 namespace App\Livewire\Auth;
 
-use Livewire\Component;
-use Livewire\Attributes\Rule;
-use Illuminate\Support\Facades\Password;
-use Illuminate\Support\Facades\Mail;
 use App\Models\User;
+use Livewire\Component;
 use App\Mail\PasswordReset;
+use Livewire\Attributes\Rule;
+use Livewire\Attributes\Title;
+use Livewire\Attributes\Layout;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Password;
 
+
+#[Title('Recuperar senha')]
+#[Layout('components.layouts.auth.guest')]
 class ForgotPassword extends Component
 {
     #[Rule('required|email')]
@@ -18,6 +23,7 @@ class ForgotPassword extends Component
 
     public function sendResetLink()
     {
+        
         $this->validate();
 
         $user = User::where('email', $this->email)->first();

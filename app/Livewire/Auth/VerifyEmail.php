@@ -17,7 +17,9 @@ class VerifyEmail extends Component
     {
         // Se o email já está verificado, redirecionar
         if (Auth::check() && Auth::user()->hasVerifiedEmail()) {
+
             return redirect()->route('dashboard.administrative');
+
         }
     }
 

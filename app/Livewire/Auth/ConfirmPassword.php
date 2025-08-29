@@ -3,9 +3,13 @@
 namespace App\Livewire\Auth;
 
 use Livewire\Component;
+use Livewire\Attributes\Title;
+use Livewire\Attributes\Layout;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
+#[Title('Confirmar Sua Senha')]
+#[Layout('components.layouts.auth.guest')]
 class ConfirmPassword extends Component
 {
     public $password = '';
@@ -26,7 +30,7 @@ class ConfirmPassword extends Component
 
         session(['auth.password_confirmed_at' => time()]);
 
-        return redirect()->intended(route('dashboard'));
+        return redirect()->intended(route('dashboard-administrative'));
     }
 
     public function render()

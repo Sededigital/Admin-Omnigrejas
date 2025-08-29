@@ -1,29 +1,31 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 
 //** LOGIN USER */
 use App\Livewire\Auth\Login;
+use Illuminate\Http\Request;
 use App\Livewire\Auth\VerifyEmail;
-use App\Livewire\Auth\TwoFactorChallenge;
 use App\Livewire\Auth\ResetPassword;
-use App\Livewire\Auth\ForgotPassword;
-use App\Livewire\Auth\ConfirmPassword;
+use Illuminate\Auth\Events\Verified;
+use Illuminate\Support\Facades\Auth;
 
 //** DASHBOARDS */
-use App\Livewire\Admin\Super\Dashboard;
-use App\Livewire\Admin\Admin\Dashboard as AdminDashboard;
-use App\Livewire\Admin\Root\Dashboard as RootDashboard;
+use App\Livewire\Auth\ForgotPassword;
+use Illuminate\Support\Facades\Route;
+use App\Livewire\Auth\ConfirmPassword;
 //** END  */
 
 
 //** USERS */
-use App\Livewire\Profile\Show  as ProfileShow;
+use App\Livewire\Admin\Super\Dashboard;
 use App\Livewire\Profile\TwoFactorPage;
 
 
 //** SRTART CHURCES Routes */
+use App\Livewire\Auth\TwoFactorChallenge;
+use App\Livewire\Profile\Show  as ProfileShow;
 use App\Livewire\System\Geral\Users\ListUsers;
 use App\Livewire\System\Geral\Church\Events\Scale;
 use App\Livewire\System\Geral\Church\Events\Events;
@@ -31,15 +33,18 @@ use App\Livewire\System\Geral\Church\Courses\Courses;
 use App\Livewire\System\Geral\Church\Events\Calendar;
 use App\Livewire\System\Geral\Church\Members\Members;
 use App\Livewire\System\Geral\Church\Events\Schedules;
+use App\Livewire\Admin\Root\Dashboard as RootDashboard;
 use App\Livewire\System\Geral\Church\Members\TalentMap;
 use App\Livewire\System\Geral\Church\Only\BibleReading;
 use App\Livewire\System\Geral\Church\Only\OnlyChurches;
 use App\Livewire\System\Geral\Church\Only\PastoralCare;
+
+
 use App\Livewire\System\Geral\Church\Marketplace\Orders;
 use App\Livewire\System\Geral\Church\Members\Volunteers;
 use App\Livewire\System\Geral\Church\Settings\Resources;
-
-
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use App\Livewire\Admin\Admin\Dashboard as AdminDashboard;
 use App\Livewire\System\Geral\Church\Events\StandardCult;
 use App\Livewire\System\Geral\Church\Marketplace\Payments;
 use App\Livewire\System\Geral\Church\Marketplace\Products;
@@ -66,16 +71,29 @@ Route::get('/login', Login::class)->name('login')->middleware('guest');
 Route::get('/forgot-password', ForgotPassword::class)->name('password.request');
 Route::get('/reset-password/{token}', ResetPassword::class)->name('password.reset');
 Route::get('/verify-email', VerifyEmail::class)->name('verification.notice');
+Route::get('/email/verify/{id}/{hash}', function (Request $request) {
+    $user = User::find($request->route('id'));
 
-Route::get('/email/verify/{id}/{hash}', function (Illuminate\Foundation\Auth\EmailVerificationRequest $request) {
-    $request->fulfill();
+    if (!$user) {
+        #=> USER NOT FOUND → redireciona pro login
+        return redirect()->route('login')->with('error', 'Usuário inválido.');
+    }
 
-    $user = $request->user();
-    $dashboardRoute = $user->redirectDashboardRoute();
+    if (!hash_equals((string) $request->route('hash'), sha1($user->getEmailForVerification()))) {
+        # => hash inválida → redireciona pro login
+        return redirect()->route('login')->with('login_error', 'Link de verificação inválido.');
+    }
+    // loga o user
+    Auth::login($user, true);
 
-    return redirect()->route($dashboardRoute)->with('status', 'Email verificado com sucesso!');
+    if (! $user->hasVerifiedEmail() && $user->markEmailAsVerified()) {
+        event(new Verified($user));
+    }
 
-})->middleware(['auth', 'signed'])->name('verification.verify');
+    return redirect()->route($user->redirectDashboardRoute())
+        ->with('status', 'Email verificado com sucesso!');
+})->middleware(['signed'])->name('verification.verify');
+
 
 
 Route::get('/confirm-password', ConfirmPassword::class)->name('password.confirm');
@@ -95,6 +113,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('dashboard-church', AdminDashboard::class)->name('dashboard.church');
         Route::get('dashboard-root', RootDashboard::class)->name('dashboard.root');
         Route::get('geral/list-users', ListUsers::class)->name('users.lisusers');
+
+        });
 
 
     //**PREFIX CHURCHES  */
@@ -133,14 +153,19 @@ Route::middleware(['auth'])->group(function () {
         Route::get('private-messages')->name('churches.courses');
         Route::get('church-chats')->name('churches.courses');
 
+
+
+
         Route::get('/profile', ProfileShow::class)->name('profile.show');
-        });
+
+
 
         // Rotas de 2FA (não requerem 2FA completo, mas requerem email verificado)
         Route::get('/user/two-factor-authentication', TwoFactorPage::class)->name('two-factor.show');
 
 
     });
+
 });
 
 

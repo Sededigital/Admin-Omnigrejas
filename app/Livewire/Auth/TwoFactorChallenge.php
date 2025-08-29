@@ -4,11 +4,15 @@ namespace App\Livewire\Auth;
 
 use Livewire\Component;
 use Livewire\Attributes\Rule;
+use App\Mail\RecoveryCodeSent;
+use Livewire\Attributes\Title;
+use Livewire\Attributes\Layout;
+use PragmaRX\Google2FA\Google2FA;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
-use PragmaRX\Google2FA\Google2FA;
-use App\Mail\RecoveryCodeSent;
 
+#[Title('Definicões de AUTH | 2FA ')]
+#[Layout('components.layouts.app')]
 class TwoFactorChallenge extends Component
 {
     public $code = '';
