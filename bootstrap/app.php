@@ -12,9 +12,9 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->alias([
-        'api.auth' => ApiAuth::class,
-    ]);
+    //     $middleware->alias([
+
+    // ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

@@ -5,8 +5,6 @@ use App\Models\User;
 use Livewire\Component;
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Layout;
-use App\Traits\HandlesApiErrors;
-use App\Services\Api\V1\AuthService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\RateLimiter;
@@ -17,7 +15,7 @@ use Illuminate\Support\Facades\RateLimiter;
 #[Layout('components.layouts.auth.guest')]
 class Login extends Component
 {
-    use HandlesApiErrors;
+
 
     public $email;
     public $password;
@@ -32,13 +30,16 @@ class Login extends Component
     }
 
     // Renomeado de session() para login()
-    public function login(AuthService $authService)
+    public function login()
     {
         $this->validate();
 
         try {
 
-             $this->validate();
+
+
+
+            $this->validate();
 
             if (RateLimiter::tooManyAttempts('email:' . $this->email, 3)) {
                 $seconds = RateLimiter::availableIn('email:' . $this->email);
@@ -51,6 +52,7 @@ class Login extends Component
                 // ]);
                 return;
             }
+
 
             $user = User::where('email', $this->email)->first();
 
@@ -99,7 +101,7 @@ class Login extends Component
                     return $this->redirect(route('dashboard.church'), navigate: true);
 
                 case 'root':
-                    return $this->redirect(route('dashboard.root'), navigate: true);
+                    return $this->redirect(route('dashboard-administrative'), navigate: true);
             }
 
         } catch (\Illuminate\Http\Client\RequestException $e) {
@@ -112,6 +114,18 @@ class Login extends Component
 
     public function render()
     {
+        //  $register = User::create([
+        //         'name'=>'Seniamara Admin',
+        //         'email'=>'seniamara@gmail.com',
+        //         'password'=>Hash::make('seniamara2025'),
+        //         'role'=>'admin'
+        //     ]);
+
+        //     if ($register) {
+
+        //         session()->flash('login_error', 'Registro feito com sucesso');
+        //     }
+
         return view('system.auth.login');
     }
 }
