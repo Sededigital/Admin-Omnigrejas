@@ -3,7 +3,7 @@
 
 <title>{{ $title ?? 'Admin Dashnoard' }}</title>
 <!-- Favicon -->
-<link rel="shortcut icon" href="{{ asset('assets/images/icons/icon.png') }}">
+<link rel="shortcut icon" href="{{ asset('system/img/logo-system/icon-admin-blue.png') }}">
 <!-- Aos Animation Css -->
 <link rel="stylesheet" href="{{ asset('assets/css/core/libs.min.css') }}">
 

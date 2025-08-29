@@ -1,3 +1,13 @@
+@php
+    $role = Auth::user()?->role;
+
+    $badgeClasses = match($role) {
+        'root', 'super_admin' => 'badge bg-danger text-white',
+        'admin', 'pastor'     => 'badge bg-primary text-white',
+        default               => 'badge bg-secondary text-white'
+    };
+@endphp
+
 <div class="position-relative ">
     <nav class="nav navbar navbar-expand-xl navbar-light iq-navbar">
         <div class="container-fluid navbar-inner">
@@ -148,14 +158,25 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown" id="itemdropdown1">
+
                         <a class="py-0 nav-link d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <div class="btn btn-primary btn-icon btn-sm rounded-pill">
+
+
+                         <div class="btn btn-primary btn-icon btn-sm rounded-pill">
                                 <span class="btn-inner">
                                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <!-- ... (código original do ícone do carrinho) ... -->
                                 </svg>
                                 </span>
                             </div>
+                              <div class="caption ms-3 d-none d-md-block ">
+                            <h6 class="mb-0 caption-title">{{ Str::limit(Auth::user()?->name, 15, '|') ?? '' }}</h6>
+                            <p class="mb-0 caption-sub-title">
+                                <span class="{{ $badgeClasses }}" style="border-radius: 4px;">
+                                    {{ strtoupper($role ?? '') }}
+                                </span>
+                            </p>
+                        </div>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="../dashboard/app/user-profile.html">Profile</a></li>
@@ -168,6 +189,6 @@
             </div>
         </div>
     </nav>
-   
+
 
 </div>
