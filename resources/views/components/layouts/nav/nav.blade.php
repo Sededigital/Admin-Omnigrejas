@@ -1,3 +1,13 @@
+@php
+    $role = Auth::user()?->role;
+
+    $badgeClasses = match($role) {
+        'root', 'super_admin' => 'badge bg-danger text-white',
+        'admin', 'pastor'     => 'badge bg-primary text-white',
+        default               => 'badge bg-secondary text-white'
+    };
+@endphp
+
 <div class="position-relative ">
     <nav class="nav navbar navbar-expand-xl navbar-light iq-navbar">
         <div class="container-fluid navbar-inner">
@@ -162,8 +172,8 @@
                               <div class="caption ms-3 d-none d-md-block ">
                             <h6 class="mb-0 caption-title">{{ Str::limit(Auth::user()?->name, 15, '|') ?? '' }}</h6>
                             <p class="mb-0 caption-sub-title">
-                                <span class="bg-red" style="border-radius: 4px;">
-                                    {{ strtoupper(Auth::user()->role) }}
+                                <span class="{{ $badgeClasses }}" style="border-radius: 4px;">
+                                    {{ strtoupper($role ?? '') }}
                                 </span>
                             </p>
                         </div>

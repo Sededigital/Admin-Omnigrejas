@@ -11,8 +11,11 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {  
+    {
          // Extensão CITEXT
+        DB::statement("CREATE EXTENSION IF NOT EXISTS citext");
+
+        // Extensão CITEXT
         DB::statement("CREATE EXTENSION IF NOT EXISTS citext");
 
         // Enum role_enum
@@ -23,20 +26,20 @@ return new class extends Migration
             $table->uuid('id')->primary()->default(DB::raw('gen_random_uuid()'));
             $table->string('name');
             $table->text('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
             $table->string('phone')->nullable();
             $table->text('photo_url')->nullable();
             $table->string('denomination')->default('Geral');
             $table->boolean('is_active')->default(true);
-            $table->rememberToken();
+
             $table->uuid('created_by')->nullable();
 
             $table->timestampsTz();
             $table->timestampTz('deleted_at')->nullable();
         });
 
-           // Ajustar email -> citext
+        // Ajustar email -> citext
+         // Ajustar email -> citext
         DB::statement("ALTER TABLE users ALTER COLUMN email TYPE citext");
 
         // Adicionar a coluna role como ENUM nativo
@@ -54,15 +57,6 @@ return new class extends Migration
             $table->string('email')->primary();
             $table->string('token');
             $table->timestamp('created_at')->nullable();
-        });
-
-        Schema::create('sessions', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->foreignId('user_id')->nullable()->index();
-            $table->string('ip_address', 45)->nullable();
-            $table->text('user_agent')->nullable();
-            $table->longText('payload');
-            $table->integer('last_activity')->index();
         });
     }
 

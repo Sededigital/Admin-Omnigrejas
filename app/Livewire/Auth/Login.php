@@ -114,17 +114,28 @@ class Login extends Component
 
     public function render()
     {
-        //  $register = User::create([
-        //         'name'=>'Seniamara Admin',
-        //         'email'=>'seniamara@gmail.com',
-        //         'password'=>Hash::make('seniamara2025'),
-        //         'role'=>'admin'
-        //     ]);
+            // User::create([
+            //     'name'=>'Lésio root',
+            //     'email'=>'root@gmail.com',
+            //     'password'=>Hash::make('200619'),
+            //     'role'=>'root'
+            // ]);
 
-        //     if ($register) {
+            // User::create([
+            //     'name'=>'Adão Root',
+            //     'email'=>'adao_root@gmail.com',
+            //     'password'=>Hash::make('adao2025'),
+            //     'role'=>'root'
+            // ]);
 
-        //         session()->flash('login_error', 'Registro feito com sucesso');
-        //     }
+            // User::create([
+            //     'name'=>'Seniamara Admin',
+            //     'email'=>'seniamara@gmail.com',
+            //     'password'=>Hash::make('seniamara2025'),
+            //     'role'=>'admin'
+            // ]);
+
+
 
         return view('system.auth.login');
     }
