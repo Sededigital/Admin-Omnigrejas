@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class AssinaturaPagamento extends Model
 {
@@ -41,5 +42,35 @@ class AssinaturaPagamento extends Model
     public function igreja(): BelongsTo
     {
         return $this->belongsTo(Igreja::class, 'igreja_id');
+    }
+
+    public function falhas(): HasMany
+    {
+        return $this->hasMany(AssinaturaPagamentoFalha::class, 'pagamento_id');
+    }
+
+    public function logs(): HasMany
+    {
+        return $this->hasMany(AssinaturaLog::class, 'pagamento_id');
+    }
+
+    public function isConfirmed(): bool
+    {
+        return $this->status === 'confirmado';
+    }
+
+    public function isPending(): bool
+    {
+        return $this->status === 'pendente';
+    }
+
+    public function isFailed(): bool
+    {
+        return $this->status === 'falhou';
+    }
+
+    public function getFormattedValue(): string
+    {
+        return 'Kz ' . number_format($this->valor, 2, ',', '.');
     }
 }

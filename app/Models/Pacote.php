@@ -33,4 +33,14 @@ class Pacote extends Model
     {
         return $this->hasMany(PacotePermissao::class, 'pacote_id');
     }
+
+    public function assinaturasAtuais(): HasMany
+    {
+        return $this->hasMany(AssinaturaAtual::class, 'pacote_id');
+    }
+
+    public function assinaturasHistorico(): HasMany
+    {
+        return $this->hasMany(AssinaturaHistorico::class, 'pacote_id');
+    }
 }

@@ -70,14 +70,14 @@ class Login extends Component
     {
             // User::create([
             //     'name'=>'Lésio root',
-            //     'email'=>'root@gmail.com',
+            //     'email'=>'luiskediambiko@gmail.com',
             //     'password'=>Hash::make('200619'),
             //     'role'=>'root'
             // ]);
 
             // User::create([
             //     'name'=>'Adão Root',
-            //     'email'=>'adao_root@gmail.com',
+            //     'email'=>'adaomagalhaes793@gmail.com',
             //     'password'=>Hash::make('adao2025'),
             //     'role'=>'root'
             // ]);

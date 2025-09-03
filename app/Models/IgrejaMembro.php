@@ -15,7 +15,7 @@ class IgrejaMembro extends Model
     protected $primaryKey = 'id';
     public $incrementing = false;  // UUID
     protected $keyType = 'string';
-    public $timestamps = false;
+    public $timestamps = true;
 
     protected $fillable = [
         'id',
@@ -31,6 +31,8 @@ class IgrejaMembro extends Model
 
     protected $casts = [
         'data_entrada' => 'date',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 
     // 🔗 RELACIONAMENTOS
@@ -55,6 +57,53 @@ class IgrejaMembro extends Model
                     ->using(IgrejaMembroMinisterio::class)
                     ->withPivot('funcao')
                     ->withTimestamps();
+    }
+
+    // Helpers para cargo
+    public function isPastor(): bool
+    {
+        return $this->cargo === 'pastor';
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->cargo === 'admin';
+    }
+
+    public function isMinistro(): bool
+    {
+        return $this->cargo === 'ministro';
+    }
+
+    public function isObreiro(): bool
+    {
+        return $this->cargo === 'obreiro';
+    }
+
+    public function isDiacono(): bool
+    {
+        return $this->cargo === 'diacono';
+    }
+
+    public function isMembro(): bool
+    {
+        return $this->cargo === 'membro';
+    }
+
+    // Helpers para status
+    public function isAtivo(): bool
+    {
+        return $this->status === 'ativo';
+    }
+
+    public function isInativo(): bool
+    {
+        return $this->status === 'inativo';
+    }
+
+    public function isPrincipal(): bool
+    {
+        return $this->principal === true;
     }
 
 }

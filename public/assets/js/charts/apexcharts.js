@@ -22,6 +22,12 @@
             }
         }
 
+        // Verifica se ApexCharts está disponível
+        if (typeof ApexCharts === 'undefined') {
+            console.warn('ApexCharts não está carregado');
+            return;
+        }
+
         // apex-basic
         if (document.querySelectorAll("#apex-basic").length) {
             const options = {
@@ -51,11 +57,9 @@
                     categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"]
                 }
             };
-            if (typeof ApexCharts !== undefined) {
-                const chart = new ApexCharts(document.querySelector("#apex-basic"), options);
-                chart.render();
-                charts['apex-basic'] = chart;
-            }
+            const chart = new ApexCharts(document.querySelector("#apex-basic"), options);
+            chart.render();
+            charts['apex-basic'] = chart;
         }
 
         // apex-line-area
@@ -89,11 +93,9 @@
                     }
                 }
             };
-            if (typeof ApexCharts !== undefined) {
-                const chart = new ApexCharts(document.querySelector("#apex-line-area"), options);
-                chart.render();
-                charts['apex-line-area'] = chart;
-            }
+            const chart = new ApexCharts(document.querySelector("#apex-line-area"), options);
+            chart.render();
+            charts['apex-line-area'] = chart;
         }
 
         // apex-column
@@ -148,11 +150,9 @@
                     }
                 }
             };
-            if (typeof ApexCharts !== undefined) {
-                const chart = new ApexCharts(document.querySelector("#apex-column"), options);
-                chart.render();
-                charts['apex-column'] = chart;
-            }
+            const chart = new ApexCharts(document.querySelector("#apex-column"), options);
+            chart.render();
+            charts['apex-column'] = chart;
         }
 
         // apex-bar
@@ -178,11 +178,9 @@
                     categories: ["Netherlands", "Italy", "France", "Japan", "United States", "China", "Germany"]
                 }
             };
-            if (typeof ApexCharts !== undefined) {
-                const chart = new ApexCharts(document.querySelector("#apex-bar"), options);
-                chart.render();
-                charts['apex-bar'] = chart;
-            }
+            const chart = new ApexCharts(document.querySelector("#apex-bar"), options);
+            chart.render();
+            charts['apex-bar'] = chart;
         }
 
         // apex-mixed-chart
@@ -261,11 +259,9 @@
                     }
                 }
             };
-            if (typeof ApexCharts !== undefined) {
-                const chart = new ApexCharts(document.querySelector("#apex-mixed-chart"), options);
-                chart.render();
-                charts['apex-mixed-chart'] = chart;
-            }
+            const chart = new ApexCharts(document.querySelector("#apex-mixed-chart"), options);
+            chart.render();
+            charts['apex-mixed-chart'] = chart;
         }
 
         // apex-candlestick-chart
@@ -337,11 +333,9 @@
                     }
                 }
             };
-            if (typeof ApexCharts !== undefined) {
-                const chart = new ApexCharts(document.querySelector("#apex-candlestick-chart"), options);
-                chart.render();
-                charts['apex-candlestick-chart'] = chart;
-            }
+            const chart = new ApexCharts(document.querySelector("#apex-candlestick-chart"), options);
+            chart.render();
+            charts['apex-candlestick-chart'] = chart;
         }
     };
 
@@ -351,6 +345,23 @@
     // Listener para o evento de navegação do Livewire, que acionará a reinicialização.
     document.addEventListener('livewire:navigated', () => {
         // Um pequeno atraso garante que o DOM foi completamente substituído antes de renderizar os gráficos.
-        setTimeout(initializeApexCharts, 50);
+        setTimeout(initializeApexCharts, 100);
     });
+
+    // Listener para eventos personalizados do Livewire
+    document.addEventListener('periodoAlterado', () => {
+        // Quando o período é alterado, reinicializa os gráficos
+        setTimeout(initializeApexCharts, 100);
+    });
+
+    // Listener para mudanças de página do Livewire
+    document.addEventListener('livewire:load', () => {
+        initializeApexCharts();
+    });
+
+    // Listener para atualizações do Livewire
+    document.addEventListener('livewire:update', () => {
+        setTimeout(initializeApexCharts, 100);
+    });
+
 })(jQuery);

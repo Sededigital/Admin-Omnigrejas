@@ -946,4 +946,34 @@
     })
   }
 
+  // Listener para o evento de navegação do Livewire
+  document.addEventListener('livewire:navigated', () => {
+    setTimeout(() => {
+      // Reinicializar gráficos após navegação
+      if (typeof ApexCharts !== 'undefined') {
+        // Recarregar gráficos se necessário
+        // console.log('Livewire navegou, gráficos podem precisar ser reinicializados');
+      }
+    }, 100);
+  });
+
+  // Listener para eventos personalizados do Livewire
+  document.addEventListener('periodoAlterado', () => {
+    setTimeout(() => {
+    //   console.log('Período alterado, gráficos podem precisar ser atualizados');
+    }, 100);
+  });
+
+  // Listener para mudanças de página do Livewire
+  document.addEventListener('livewire:load', () => {
+    // console.log('Livewire carregado');
+  });
+
+  // Listener para atualizações do Livewire
+  document.addEventListener('livewire:update', () => {
+    setTimeout(() => {
+    //   console.log('Livewire atualizado');
+    }, 100);
+  });
+
 })(jQuery)

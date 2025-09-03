@@ -81,10 +81,11 @@
         .button-container {
             text-align: center;
             margin: 36px 0;
+            color: #f0f9ff;
         }
         .reset-button {
             display: inline-block;
-            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+            background: linear-gradient(135deg, #6f2323 0%, #a71a1a 100%);
             color: white;
             text-decoration: none;
             padding: 16px 36px;

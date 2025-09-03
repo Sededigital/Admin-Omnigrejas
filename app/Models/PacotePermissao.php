@@ -35,4 +35,75 @@ class PacotePermissao extends Model
     {
         return $this->belongsTo(Modulo::class, 'modulo_id');
     }
+
+    // 🔗 MÉTODOS DE CONVENIÊNCIA
+    public function isLeitura(): bool
+    {
+        return $this->permissao === 'leitura';
+    }
+
+    public function isEscrita(): bool
+    {
+        return $this->permissao === 'escrita';
+    }
+
+    public function isNenhuma(): bool
+    {
+        return $this->permissao === 'nenhuma';
+    }
+
+    public function getPermissaoFormatada(): string
+    {
+        return match($this->permissao) {
+            'leitura' => 'Leitura',
+            'escrita' => 'Escrita',
+            'nenhuma' => 'Nenhuma',
+            default => ucfirst($this->permissao)
+        };
+    }
+
+    public function getPermissaoClass(): string
+    {
+        return match($this->permissao) {
+            'leitura' => 'info',
+            'escrita' => 'success',
+            'nenhuma' => 'secondary',
+            default => 'secondary'
+        };
+    }
+
+    public function getPermissaoIcone(): string
+    {
+        return match($this->permissao) {
+            'leitura' => 'fas fa-eye',
+            'escrita' => 'fas fa-edit',
+            'nenhuma' => 'fas fa-ban',
+            default => 'fas fa-question'
+        };
+    }
+
+    public function podeLer(): bool
+    {
+        return $this->isLeitura() || $this->isEscrita();
+    }
+
+    public function podeEscrever(): bool
+    {
+        return $this->isEscrita();
+    }
+
+    public function temPermissao(): bool
+    {
+        return !$this->isNenhuma();
+    }
+
+    public function getDescricaoPermissao(): string
+    {
+        return match($this->permissao) {
+            'leitura' => 'Pode visualizar informações',
+            'escrita' => 'Pode visualizar e modificar informações',
+            'nenhuma' => 'Sem acesso a este módulo',
+            default => 'Permissão desconhecida'
+        };
+    }
 }

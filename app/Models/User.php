@@ -12,6 +12,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class User extends Authenticatable  implements MustVerifyEmail
 {
@@ -87,21 +89,236 @@ class User extends Authenticatable  implements MustVerifyEmail
     }
 
     // 🔗 RELACIONAMENTOS
-    public function createdBy()
+    public function createdBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by');
     }
 
-    public function membros()
+    public function membros(): HasMany
     {
         return $this->hasMany(IgrejaMembro::class, 'user_id');
     }
 
-    public function postReactions()
+    public function postReactions(): HasMany
     {
         return $this->hasMany(PostReaction::class, 'user_id');
     }
 
+    public function posts(): HasMany
+    {
+        return $this->hasMany(Post::class, 'author_id');
+    }
+
+    public function comentarios(): HasMany
+    {
+        return $this->hasMany(Comentario::class, 'user_id');
+    }
+
+    public function mensagensPrivadasEnviadas(): HasMany
+    {
+        return $this->hasMany(MensagemPrivada::class, 'remetente_id');
+    }
+
+    public function mensagensPrivadasRecebidas(): HasMany
+    {
+        return $this->hasMany(MensagemPrivada::class, 'destinatario_id');
+    }
+
+    public function notificacoes(): HasMany
+    {
+        return $this->hasMany(Notificacao::class, 'user_id');
+    }
+
+    public function agenda(): HasMany
+    {
+        return $this->hasMany(Agenda::class, 'user_id');
+    }
+
+    public function engajamentoPontos(): HasMany
+    {
+        return $this->hasMany(EngajamentoPonto::class, 'user_id');
+    }
+
+    public function engajamentoBadges(): HasMany
+    {
+        return $this->hasMany(EngajamentoBadge::class, 'user_id');
+    }
+
+    public function cursoMatriculas(): HasMany
+    {
+        return $this->hasMany(CursoMatricula::class, 'user_id');
+    }
+
+    public function cursoProgressos(): HasMany
+    {
+        return $this->hasMany(CursoProgresso::class, 'user_id');
+    }
+
+    public function agendamentosRecursos(): HasMany
+    {
+        return $this->hasMany(AgendamentoRecurso::class, 'user_id');
+    }
+
+    public function doacoesOnline(): HasMany
+    {
+        return $this->hasMany(DoacaoOnline::class, 'user_id');
+    }
+
+    public function voluntario(): HasOne
+    {
+        return $this->hasOne(Voluntario::class, 'user_id');
+    }
+
+    public function atendimentosPastorais(): HasMany
+    {
+        return $this->hasMany(AtendimentoPastoral::class, 'pastor_id');
+    }
+
+    public function pedidosOracao(): HasMany
+    {
+        return $this->hasMany(PedidoOracao::class, 'user_id');
+    }
+
+    public function marketplacePedidos(): HasMany
+    {
+        return $this->hasMany(MarketplacePedido::class, 'comprador_id');
+    }
+
+    public function marketplacePagamentos(): HasMany
+    {
+        return $this->hasMany(MarketplacePagamento::class, 'user_id');
+    }
+
+    public function auditoriaLogs(): HasMany
+    {
+        return $this->hasMany(AuditoriaLog::class, 'usuario_id');
+    }
+
+    public function assinaturaLogs(): HasMany
+    {
+        return $this->hasMany(AssinaturaLog::class, 'usuario_id');
+    }
+
+    public function financeiroMovimentos(): HasMany
+    {
+        return $this->hasMany(FinanceiroMovimento::class, 'responsavel_id');
+    }
+
+    public function financeiroAuditoria(): HasMany
+    {
+        return $this->hasMany(FinanceiroAuditoria::class, 'alterado_por');
+    }
+
+    public function igrejaChatMensagens(): HasMany
+    {
+        return $this->hasMany(IgrejaChatMensagem::class, 'autor_id');
+    }
+
+    public function igrejaChats(): HasMany
+    {
+        return $this->hasMany(IgrejaChat::class, 'criado_por');
+    }
+
+    public function comunicacoes(): HasMany
+    {
+        return $this->hasMany(Comunicacao::class, 'enviado_por');
+    }
+
+    public function recursos(): HasMany
+    {
+        return $this->hasMany(Recurso::class, 'user_id');
+    }
+
+    public function eventos(): HasMany
+    {
+        return $this->hasMany(Evento::class, 'responsavel');
+    }
+
+    public function escalas(): HasMany
+    {
+        return $this->hasMany(Escala::class, 'membro_id');
+    }
+
+    public function escalasAuto(): HasMany
+    {
+        return $this->hasMany(EscalaAuto::class, 'voluntario_id');
+    }
+
+    public function ministerios(): HasMany
+    {
+        return $this->hasMany(Ministerio::class, 'user_id');
+    }
+
+    public function habilidades(): HasMany
+    {
+        return $this->hasMany(HabilidadesMembro::class, 'user_id');
+    }
+
+    public function membroPerfil(): HasOne
+    {
+        return $this->hasOne(MembroPerfil::class, 'user_id');
+    }
+
+    public function igrejaMembrosMinisterios(): HasMany
+    {
+        return $this->hasMany(IgrejaMembrosMinisterio::class, 'membro_id');
+    }
+
+    public function igrejaMembrosHistorico(): HasMany
+    {
+        return $this->hasMany(IgrejaMembrosHistorico::class, 'user_id');
+    }
+
+    public function enqueteDenuncias(): HasMany
+    {
+        return $this->hasMany(EnqueteDenuncia::class, 'criado_por');
+    }
+
+    public function relatoriosCache(): HasMany
+    {
+        return $this->hasMany(RelatorioCache::class, 'user_id');
+    }
+
+    // 🔗 RELACIONAMENTOS ESPECIAIS
+    public function igrejasPrincipais(): HasMany
+    {
+        return $this->membros()->where('principal', true);
+    }
+
+    public function igrejasAtivas(): HasMany
+    {
+        return $this->membros()->where('status', 'ativo');
+    }
+
+    public function igrejasPastor(): HasMany
+    {
+        return $this->membros()->where('cargo', 'pastor');
+    }
+
+    public function igrejasAdmin(): HasMany
+    {
+        return $this->membros()->where('cargo', 'admin');
+    }
+
+    public function igrejasMinistro(): HasMany
+    {
+        return $this->membros()->where('cargo', 'ministro');
+    }
+
+    public function igrejasObreiro(): HasMany
+    {
+        return $this->membros()->where('cargo', 'obreiro');
+    }
+
+    public function igrejasDiacono(): HasMany
+    {
+        return $this->membros()->where('cargo', 'diacono');
+    }
+
+    public function igrejasMembro(): HasMany
+    {
+        return $this->membros()->where('cargo', 'membro');
+    }
 
 
     // ========================================

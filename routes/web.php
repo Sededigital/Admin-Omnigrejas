@@ -26,7 +26,7 @@ use App\Livewire\Profile\TwoFactorPage;
 //** SRTART CHURCES Routes */
 use App\Livewire\Auth\TwoFactorChallenge;
 use App\Livewire\Profile\Show  as ProfileShow;
-use App\Livewire\System\Geral\Users\ListUsers;
+use App\Livewire\System\Geral\Users\Users;
 use App\Livewire\System\Geral\Church\Events\Scale;
 use App\Livewire\System\Geral\Church\Events\Events;
 use App\Livewire\System\Geral\Church\Courses\Courses;
@@ -112,7 +112,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('dashboard-administrative', Dashboard::class)->name('dashboard.administrative');
         Route::get('dashboard-church', AdminDashboard::class)->name('dashboard.church');
         Route::get('dashboard-root', RootDashboard::class)->name('dashboard.root');
-        Route::get('geral/list-users', ListUsers::class)->name('users.lisusers');
+        Route::get('geral/list-users', Users::class)->name('users.lisusers');
 
         });
 
