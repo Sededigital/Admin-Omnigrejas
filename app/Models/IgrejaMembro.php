@@ -3,9 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class IgrejaMembro extends Model
 {
@@ -41,6 +42,20 @@ class IgrejaMembro extends Model
         return $this->belongsTo(Igreja::class, 'igreja_id');
     }
 
+    public function membroPerfil(): HasOne
+    {
+        return $this->hasOne(MembroPerfil::class, 'igreja_membro_id');
+    }
+
+    public function ministerios()
+    {
+        return $this->belongsToMany(Ministerio::class, 'igreja_membros_ministerios', 'membro_id', 'ministerio_id')
+                    ->using(IgrejaMembroMinisterio::class)
+                    ->withPivot('funcao');
+    }
+
+
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
@@ -51,13 +66,6 @@ class IgrejaMembro extends Model
         return $this->belongsTo(User::class, 'created_by');
     }
 
-    public function ministerios()
-    {
-        return $this->belongsToMany(Ministerio::class, 'igreja_membros_ministerios', 'membro_id', 'ministerio_id')
-                    ->using(IgrejaMembroMinisterio::class)
-                    ->withPivot('funcao')
-                    ->withTimestamps();
-    }
 
     // Helpers para cargo
     public function isPastor(): bool

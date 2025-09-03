@@ -23,14 +23,20 @@ class AssinaturaHistorico extends Model
         'status',
         'forma_pagamento',
         'transacao_id',
+        'trial_fim',
+        'duracao_meses_custom',
+        'vitalicio',
     ];
 
     protected $casts = [
-        'data_inicio' => 'date',
-        'data_fim'    => 'date',
-        'valor'       => 'decimal:2',
-        'created_at'  => 'datetime',
-        'updated_at'  => 'datetime',
+        'data_inicio'          => 'date',
+        'data_fim'             => 'date',
+        'trial_fim'            => 'date',
+        'valor'                => 'decimal:2',
+        'duracao_meses_custom' => 'integer',
+        'vitalicio'            => 'boolean',
+        'created_at'           => 'datetime',
+        'updated_at'           => 'datetime',
     ];
 
     // 🔗 RELACIONAMENTOS
@@ -64,8 +70,23 @@ class AssinaturaHistorico extends Model
         return $this->hasMany(AssinaturaLog::class, 'assinatura_id');
     }
 
+    public function notificacoes(): HasMany
+    {
+        return $this->hasMany(AssinaturaNotificacao::class, 'assinatura_id');
+    }
+
+    public function upgrades(): HasMany
+    {
+        return $this->hasMany(AssinaturaUpgrade::class, 'assinatura_id');
+    }
+
+    // Helpers
     public function getDuracaoMeses(): int
     {
+        if ($this->vitalicio) {
+            return 9999; // vitalício => duração infinita simbólica
+        }
+
         return $this->data_inicio->diffInMonths($this->data_fim);
     }
 

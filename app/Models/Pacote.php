@@ -17,15 +17,19 @@ class Pacote extends Model
         'nome',
         'descricao',
         'preco',
+        'preco_vitalicio',
         'duracao_meses',
+        'trial_dias',
     ];
 
     protected $casts = [
-        'preco' => 'decimal:2',
+        'preco'         => 'decimal:2',
+        'preco_vitalicio' => 'decimal:2',
         'duracao_meses' => 'integer',
-        'created_at' => 'datetime',
-        'updated_at' => 'datetime',
-        'deleted_at' => 'datetime',
+        'trial_dias'    => 'integer',
+        'created_at'    => 'datetime',
+        'updated_at'    => 'datetime',
+        'deleted_at'    => 'datetime',
     ];
 
     // 🔗 RELACIONAMENTOS

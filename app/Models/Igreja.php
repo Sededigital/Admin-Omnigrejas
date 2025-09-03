@@ -51,6 +51,18 @@ class Igreja extends Model
         return $this->hasMany(IgrejaMembro::class, 'igreja_id');
     }
 
+    public function membrosMinisterios()
+    {
+        return $this->hasManyThrough(
+            IgrejaMembroMinisterio::class,
+            IgrejaMembro::class,
+            'igreja_id', // Foreign key on IgrejaMembro table
+            'membro_id', // Foreign key on IgrejaMembroMinisterio table
+            'id', // Local key on Igreja table
+            'id' // Local key on IgrejaMembro table
+        );
+    }
+
     public function criador(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by');
@@ -249,6 +261,16 @@ class Igreja extends Model
     public function relatoriosCache(): HasMany
     {
         return $this->hasMany(RelatorioCache::class, 'igreja_id');
+    }
+
+    public function assinaturaNotificacoes(): HasMany
+    {
+        return $this->hasMany(AssinaturaNotificacao::class, 'igreja_id');
+    }
+
+    public function assinaturaUpgrades(): HasMany
+    {
+        return $this->hasMany(AssinaturaUpgrade::class, 'igreja_id');
     }
 
     // 🔗 RELACIONAMENTOS ESPECIAIS

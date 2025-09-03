@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 #[Title('Definicões de AUTH | 2FA ')]
-#[Layout('components.layouts.app')]
+#[Layout('components.layouts.auth.guest')]
 class TwoFactorChallenge extends Component
 {
     public $code = '';

@@ -8,7 +8,7 @@
     const initializeDashboardCharts = () => {
         // Verifica se ApexCharts está disponível
         if (typeof ApexCharts === 'undefined') {
-            console.warn('ApexCharts não está carregado');
+            // console.warn('ApexCharts não está carregado');
             return;
         }
 
@@ -257,28 +257,28 @@
 
     // Listener para eventos personalizados do Livewire
     document.addEventListener('periodoAlterado', (event) => {
-        console.log('Período alterado:', event.detail);
-        
+        // console.log('Período alterado:', event.detail);
+
         // Atualizar dados dos gráficos com as novas informações
         if (event.detail && event.detail.dados) {
             const dados = event.detail.dados;
-            
+
             // Converter dados para arrays se necessário
             if (dados.grossSales) {
                 const grossSalesArray = Array.isArray(dados.grossSales) ? dados.grossSales : Object.values(dados.grossSales);
                 updateChartData('gross-sales', grossSalesArray);
             }
-            
+
             if (dados.earnings) {
                 const earningsArray = Array.isArray(dados.earnings) ? dados.earnings : Object.values(dados.earnings);
                 updateChartData('earnings', earningsArray);
             }
-            
+
             if (dados.conversions) {
                 const conversionsArray = Array.isArray(dados.conversions) ? dados.conversions : Object.values(dados.conversions);
                 updateChartData('conversions', conversionsArray);
             }
-            
+
             if (dados.usersGrowth) {
                 const usersArray = Array.isArray(dados.usersGrowth) ? dados.usersGrowth : Object.values(dados.usersGrowth);
                 updateChartData('users-growth', usersArray);

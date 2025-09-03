@@ -36,7 +36,7 @@
                                 </div>
                             @endif
 
-                           <form wire:submit.prevent='login'>
+                           <form wire:submit.prevent='login' id="login-form">
                               <div class="row">
                                  <div class="col-lg-12">
                                     <div class="form-group">
@@ -61,9 +61,9 @@
                                  </div>
                               </div>
                               <div class="d-flex justify-content-center">
-                                <button class="btn btn-primary bg-primary border-0 d-flex align-items-center" type="submit" wire:loading.attr="disabled">
+                                <button id="login-button" class="btn btn-primary bg-primary border-0 d-flex align-items-center" type="submit" wire:loading.attr="disabled" wire:loading.class="disabled" @if($loginSuccessful) disabled @endif>
                                     <span wire:loading wire:target="login" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-                                    Entrar
+                                   Entrar
                                 </button>
 
                               </div>

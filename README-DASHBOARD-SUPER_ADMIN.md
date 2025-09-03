@@ -1,5 +1,5 @@
 # 📊 Dashboard Super Admin - Omnigrejas
-
+# Lésio Luís
 ## 🎯 **Visão Geral**
 
 O Dashboard Super Admin é uma **central de comando completa** para gerenciamento de assinaturas e monitoramento da plataforma Omnigrejas. Desenvolvido com **Livewire 3** e **Chart.js**, oferece uma interface moderna e interativa para administradores de alto nível.

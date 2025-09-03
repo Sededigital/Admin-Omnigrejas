@@ -15,7 +15,12 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
                 '2fa' => \App\Http\Middleware\EnsureTwoFactorIsEnabled::class,
                 'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+                'isSuperAdmin' => \App\Http\Middleware\isSuperAdmin::class,
+                'isAdminIgreja' => \App\Http\Middleware\isAdminIgreja::class,
+                'isRoot' => \App\Http\Middleware\isRoot::class,
             ]);
+
+
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

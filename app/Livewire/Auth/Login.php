@@ -21,6 +21,8 @@ class Login extends Component
     public $email;
     public $password;
     public $remember = false;
+    public $loading = false;
+    public $loginSuccessful = false;
 
      protected $rules = [
         'email' => 'required|email',
@@ -31,41 +33,79 @@ class Login extends Component
     // Renomeado de session() para login()
     public function login()
     {
+        $this->loading = true;
         $this->validate();
 
+        // Verificar se o usuário existe
+        $user = User::where('email', $this->email)->first();
 
-        $this->validate();
+        if (!$user) {
+            // Email não encontrado
+            $this->loading = false;
+            throw ValidationException::withMessages([
+                'email' => ['Este email não está registrado em nosso sistema.'],
+            ]);
+        }
 
+        // Verificar se a senha está correta
+        if (!Hash::check($this->password, $user->password)) {
+            // Senha incorreta
+            $this->loading = false;
+            throw ValidationException::withMessages([
+                'password' => ['A senha fornecida está incorreta.'],
+            ]);
+        }
+
+        // Verificar se o usuário está ativo
+        if (!$user->is_active) {
+            // Usuário inativo
+            $this->loading = false;
+            throw ValidationException::withMessages([
+                'email' => ['Sua conta está desativada. Entre em contato com o administrador.'],
+            ]);
+        }
+
+        // Tentativa de login bem-sucedida
         if (Auth::attempt(['email' => $this->email, 'password' => $this->password], $this->remember)) {
 
             session()->regenerate();
+
+            // Marcar login como bem-sucedido para manter botão desabilitado
+            $this->loginSuccessful = true;
 
             $role = Auth::user()->role;
 
             switch ($role) {
                 case 'super_admin':
-                    redirect()->intended(route('dashboard.administrative'));
-
+                    return redirect()->intended(route('dashboard.administrative'));
+                  break;
                 case 'admin':
-                    redirect()->intended(route('dashboard.church'));
-
+                    return redirect()->intended(route('dashboard-admin.church'));
+                    break;
                 case 'pastor':
-                    redirect()->intended(route('dashboard.church'));
-
+                    return redirect()->intended(route('dashboard-admin.church'));
+                    break;
                 case 'ministro':
-                    redirect()->intended(route('dashboard.church'));
-
+                    return redirect()->intended(route('dashboard-admin.church'));
+                    break;
                 case 'root':
-                    redirect()->intended(route('dashboard.root'));
+                    return redirect()->intended(route('dashboard.root'));
+                default:
+                    // Caso o role não seja reconhecido, redirecionar para login
+                    Auth::logout();
+                    $this->loading = false;
+                    throw ValidationException::withMessages([
+                        'email' => ['Tipo de usuário não autorizado.'],
+                    ]);
             }
+        } else {
+            // Erro genérico (fallback)
+            $this->loading = false;
+            throw ValidationException::withMessages([
+                'email' => ['Erro ao fazer login. Tente novamente.'],
+            ]);
         }
-
-        throw ValidationException::withMessages([
-            'email' => ['As credenciais fornecidas não correspondem aos nossos registros.'],
-        ]);
-
     }
-
     public function render()
     {
             // User::create([

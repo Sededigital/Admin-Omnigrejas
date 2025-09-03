@@ -72,20 +72,23 @@ class IgrejaManager {
             }
         });
 
-        // Event listeners para botões de fechar
+        // Event listeners para botões de fechar (apenas para churchModal)
         document.addEventListener('click', (e) => {
-            // Botão X do modal
-            if (e.target.matches('.btn-close') || e.target.closest('.btn-close')) {
-                // console.log('Botão X clicado');
-                e.preventDefault();
-                this.closeModal();
-            }
+            // Verificar se o clique é dentro do churchModal
+            if (this.modalElement && this.modalElement.contains(e.target)) {
+                // Botão X do modal
+                if (e.target.matches('.btn-close') || e.target.closest('.btn-close')) {
+                    // console.log('Church modal X button clicked');
+                    e.preventDefault();
+                    this.closeModal();
+                }
 
-            // Botão Cancelar
-            if (e.target.matches('[data-bs-dismiss="modal"]') || e.target.closest('[data-bs-dismiss="modal"]')) {
-                // console.log('Botão Cancelar clicado');
-                e.preventDefault();
-                this.closeModal();
+                // Botão Cancelar
+                if (e.target.matches('[data-bs-dismiss="modal"]') || e.target.closest('[data-bs-dismiss="modal"]')) {
+                    // console.log('Church modal Cancel button clicked');
+                    e.preventDefault();
+                    this.closeModal();
+                }
             }
 
             // Botão Salvar - marcar como salvando
@@ -115,10 +118,10 @@ class IgrejaManager {
                 return this.onModalHide(event);
             });
 
-            // Fechar com ESC (controle manual)
+            // Fechar com ESC (controle manual) - apenas para churchModal
             document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && this.modalElement.classList.contains('show')) {
-                    // console.log('ESC pressionado');
+                if (e.key === 'Escape' && this.modalElement && this.modalElement.classList.contains('show')) {
+                    // console.log('ESC pressionado no churchModal');
                     this.closeModal();
                 }
             });
@@ -133,21 +136,26 @@ class IgrejaManager {
 
         // Listener para abrir modal
         Livewire.on('open-church-modal', () => {
-            // console.log('Evento open-church-modal recebido');
-            this.openModal();
+            if (window.igrejaManager) {
+                window.igrejaManager.openModal();
+            }
         });
 
         // Listener para fechar modal
         Livewire.on('close-church-modal', () => {
             // console.log('Evento close-church-modal recebido');
-            this.isSaving = false; // Reset do estado de salvamento
-            this.closeModal();
+            if (window.igrejaManager) {
+                window.igrejaManager.isSaving = false; // Reset do estado de salvamento
+                window.igrejaManager.closeModal();
+            }
         });
 
         // Listener para mudança do tipo de igreja
         Livewire.on('tipo-changed', (data) => {
             const tipo = Array.isArray(data) ? data[0] : data;
-            this.toggleSedeField(tipo);
+            if (window.igrejaManager) {
+                window.igrejaManager.toggleSedeField(tipo);
+            }
         });
 
         // Listeners para estados de loading do Livewire
@@ -347,14 +355,8 @@ class IgrejaManager {
 
     // Função para debug
     debug() {
-        // console.log('=== Igreja Manager Debug ===');
-        // console.log('Modal Element:', this.modalElement);
-        // console.log('Modal Instance:', this.modal);
-        // console.log('Modal Visible:', this.modalElement ? this.modalElement.classList.contains('show') : false);
-        // console.log('Is Saving:', this.isSaving);
-        // console.log('Livewire Ready:', this.isLivewireReady);
-        // console.log('Livewire Available:', typeof Livewire !== 'undefined');
-        // console.log('Bootstrap Available:', typeof bootstrap !== 'undefined');
+
+
 
         // Testar botões de fechar
         const closeButtons = document.querySelectorAll('.btn-close, [data-bs-dismiss="modal"]');
@@ -367,7 +369,7 @@ class IgrejaManager {
         if (window.igrejaManager) {
             window.igrejaManager.openModal();
         } else {
-            console.error('IgrejaManager não inicializado');
+         //   console.error('IgrejaManager não inicializado');
         }
     }
 
@@ -378,6 +380,16 @@ class IgrejaManager {
             window.igrejaManager.closeModal();
         } else {
             console.error('IgrejaManager não inicializado');
+        }
+    }
+
+    // Função para editar igreja - recebe ID e dispara evento para Livewire
+    static editIgreja(igrejaId) {
+       //  console.log('Editando igreja com ID:', igrejaId);
+        if (typeof Livewire !== 'undefined') {
+            Livewire.dispatch('edit-igreja', igrejaId);
+        } else {
+         //   console.error('Livewire não está disponível');
         }
     }
 }
@@ -422,6 +434,15 @@ window.closeChurchModal = () => {
     // console.log('Função global closeChurchModal chamada');
     IgrejaManager.closeModal();
 };
+
+// Função global para editar igreja
+function editIgreja(id) {
+    if (typeof Livewire !== 'undefined') {
+        Livewire.dispatch('edit-igreja', [id]);
+    } else {
+        console.error('Livewire não está disponível para editar igreja');
+    }
+}
 
 // Debug global
 window.debugIgrejaManager = () => {

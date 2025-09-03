@@ -13,7 +13,6 @@ class AssinaturaAtual extends Model
     protected $primaryKey = 'igreja_id';
     public $incrementing = false; // chave primária é FK
     protected $keyType = 'int';
-    public $timestamps = false;
 
     protected $fillable = [
         'igreja_id',
@@ -21,13 +20,19 @@ class AssinaturaAtual extends Model
         'data_inicio',
         'data_fim',
         'status',
+        'trial_fim',
+        'duracao_meses_custom',
+        'vitalicio',
     ];
 
     protected $casts = [
-        'data_inicio' => 'date',
-        'data_fim'    => 'date',
-        'created_at'  => 'datetime',
-        'updated_at'  => 'datetime',
+        'data_inicio'          => 'date',
+        'data_fim'             => 'date',
+        'trial_fim'            => 'date',
+        'duracao_meses_custom' => 'integer',
+        'vitalicio'            => 'boolean',
+        'created_at'           => 'datetime',
+        'updated_at'           => 'datetime',
     ];
 
     // 🔗 RELACIONAMENTOS
@@ -66,19 +71,28 @@ class AssinaturaAtual extends Model
         return $this->hasMany(AssinaturaPagamentoFalha::class, 'igreja_id', 'igreja_id');
     }
 
+    // Helpers
     public function isExpired(): bool
     {
+        if ($this->vitalicio) {
+            return false;
+        }
         return $this->data_fim && $this->data_fim->isPast();
     }
 
     public function isExpiringSoon(int $days = 30): bool
     {
+        if ($this->vitalicio) {
+            return false;
+        }
         return $this->data_fim && $this->data_fim->diffInDays(now()) <= $days;
     }
 
     public function getDaysUntilExpiration(): int
     {
+        if ($this->vitalicio) {
+            return 9999; // vitalício => nunca expira
+        }
         return $this->data_fim ? $this->data_fim->diffInDays(now()) : 0;
     }
-
 }

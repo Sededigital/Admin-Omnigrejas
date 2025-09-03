@@ -261,7 +261,7 @@ class User extends Authenticatable  implements MustVerifyEmail
 
     public function igrejaMembrosMinisterios(): HasMany
     {
-        return $this->hasMany(IgrejaMembrosMinisterio::class, 'membro_id');
+        return $this->hasMany(IgrejaMembroMinisterio::class, 'membro_id');
     }
 
     public function igrejaMembrosHistorico(): HasMany
@@ -277,6 +277,11 @@ class User extends Authenticatable  implements MustVerifyEmail
     public function relatoriosCache(): HasMany
     {
         return $this->hasMany(RelatorioCache::class, 'user_id');
+    }
+
+    public function assinaturaUpgrades(): HasMany
+    {
+        return $this->hasMany(AssinaturaUpgrade::class, 'usuario_id');
     }
 
     // 🔗 RELACIONAMENTOS ESPECIAIS

@@ -48,8 +48,11 @@
                 </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Links da Esquerda Adicionados Aqui -->
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                {{-- ADMIN IGREJAS --}}
+                @if (Auth::user()?->isIgrejaAdmin())
+
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">
                             <svg class="icon-20" width="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -88,7 +91,10 @@
                     </li>
                 </ul>
 
-                <!-- Links da Direita (Originais) -->
+                @endif
+
+
+
                 <ul class="mb-2 navbar-nav ms-auto align-items-center navbar-list mb-lg-0">
                     <li class="nav-item d-flex align-items-center ms-3 font-size-toggle">
 
@@ -99,25 +105,7 @@
                             <span class="mb-0 h4" style="color: inherit !important;">A</span>
                         </label>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="search-toggle nav-link" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="../assets/images/Flag/flag001.png" class="img-fluid rounded-circle" alt="user" style="height: 30px; min-width: 30px; width: 30px;">
-                            <span class="bg-primary"></span>
-                        </a>
-                        <div class="p-0 sub-drop dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton2">
-                            <div class="m-0 border-0 shadow-none rounded card">
-                                <div class="p-0 ">
-                                    <ul class="p-0 list-group list-group-flush">
-                                        <li class="iq-sub-card list-group-item"><a class="p-0 d-flex justify-content-start d-flex align-items-center" href="#"><img src="../assets/images/Flag/flag-03.png" alt="img-flaf" class="img-fluid me-2" style="width: 15px;height: 15px;min-width: 15px;"/>Spanish</a></li>
-                                        <li class="iq-sub-card list-group-item"><a class="p-0 d-flex justify-content-start d-flex align-items-center" href="#"><img src="../assets/images/Flag/flag-04.png" alt="img-flaf" class="img-fluid me-2" style="width: 15px;height: 15px;min-width: 15px;"/>Italian</a></li>
-                                        <li class="iq-sub-card list-group-item"><a class="p-0 d-flex justify-content-start d-flex align-items-center" href="#"><img src="../assets/images/Flag/flag-02.png" alt="img-flaf" class="img-fluid me-2" style="width: 15px;height: 15px;min-width: 15px;"/>French</a></li>
-                                        <li class="iq-sub-card list-group-item"><a class="p-0 d-flex justify-content-start d-flex align-items-center" href="#"><img src="../assets/images/Flag/flag-05.png" alt="img-flaf" class="img-fluid me-2" style="width: 15px;height: 15px;min-width: 15px;"/>German</a></li>
-                                        <li class="iq-sub-card list-group-item"><a class="p-0 d-flex justify-content-start d-flex align-items-center" href="#"><img src="../assets/images/Flag/flag-06.png" alt="img-flaf" class="img-fluid me-2" style="width: 15px;height: 15px;min-width: 15px;"/>Japanese</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
+
                     <li class="nav-item dropdown">
                         <a href="#"  class="nav-link" id="notification-drop" data-bs-toggle="dropdown" >
                             <svg class="icon-24" width="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -142,35 +130,18 @@
                             <!-- ... (código original dos e-mails) ... -->
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link ps-3 pe-2" id="cart-drop" data-bs-toggle="dropdown">
-                            <div class="btn btn-primary btn-icon btn-sm rounded-pill btn-action">
-                                <span class="btn-inner">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <!-- ... (código original do ícone do carrinho) ... -->
-                                </svg>
-                                </span>
-                                <span class="notification-alert"></span>
-                            </div>
-                        </a>
-                        <div class="p-0 sub-drop dropdown-menu dropdown-menu-end" aria-labelledby="cart-drop">
-                            <!-- ... (código original do carrinho) ... -->
-                        </div>
-                    </li>
+
                     <li class="nav-item dropdown" id="itemdropdown1">
 
                         <a class="py-0 nav-link d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 
-
-                         <div class="btn btn-primary btn-icon btn-sm rounded-pill">
+                         <div class="btn btn-primary btn-icon img-fluid rounded-circle">
                                 <span class="btn-inner">
-                                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <!-- ... (código original do ícone do carrinho) ... -->
-                                </svg>
+                                    {{ mb_strtoupper(mb_substr(Auth::user()?->name, 0, 2, 'UTF-8'), 'UTF-8') }}
                                 </span>
                             </div>
                               <div class="caption ms-3 d-none d-md-block ">
-                            <h6 class="mb-0 caption-title">{{ Str::limit(Auth::user()?->name, 15, '|') ?? '' }}</h6>
+                            <h6 class="mb-0 caption-title">{{ Str::limit(Auth::user()?->name, 20, '|') ?? '' }}</h6>
                             <p class="mb-0 caption-sub-title">
                                 <span class="{{ $badgeClasses }}" style="border-radius: 4px;">
                                     {{ strtoupper($role ?? '') }}

@@ -1,4 +1,6 @@
 # 🏛️ Sistema de Gestão de Igrejas
+# Lésio Luís
+
 
 Sistema completo para gerenciamento de igrejas com interface responsiva, modais otimizados e integração total com Livewire.
 
